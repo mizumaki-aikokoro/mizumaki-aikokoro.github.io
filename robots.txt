@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://uniwa1331.my.canva.site/sitemap.xml
+Sitemap: https://mizumaki-aikokoro.github.io/sitemap.xml
