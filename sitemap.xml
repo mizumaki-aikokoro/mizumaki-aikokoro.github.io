@@ -6,8 +6,38 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://mizumaki-aikokoro.github.io/jigyosho-list.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://mizumaki-aikokoro.github.io/soudan-jigyosho-list.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mizumaki-aikokoro.github.io/kyotaku-kaigo-list.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mizumaki-aikokoro.github.io/juudo-houmon-kaigo-list.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mizumaki-aikokoro.github.io/gh-list.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mizumaki-aikokoro.github.io/shurou-a-list.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mizumaki-aikokoro.github.io/shurou-b-list.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
