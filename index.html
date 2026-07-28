@@ -110,6 +110,11 @@
     font-size: 0.9rem;
     border-radius: 20px;
   }
+  @media (max-width: 700px) {
+    nav.site-nav ul { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+    nav.site-nav li { flex: 0 0 auto; }
+    nav.site-nav a { font-size: 0.8rem; padding: 6px 10px; white-space: nowrap; }
+  }
   nav.site-nav a:hover { background: var(--green-light); }
 
   .hero {
