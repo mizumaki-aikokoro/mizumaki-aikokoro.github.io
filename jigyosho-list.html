@@ -14,6 +14,42 @@
 <meta property="og:image" content="logo.png">
 <meta property="og:locale" content="ja_JP">
 <link rel="icon" href="logo.png" type="image/png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "トップページ", "item": "https://mizumaki-aikokoro.github.io/"},
+    {"@type": "ListItem", "position": 2, "name": "障がい福祉サービス事業所一覧", "item": "https://mizumaki-aikokoro.github.io/jigyosho-list.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "障がい福祉サービス事業所一覧",
+  "description": "福岡県内の指定障がい福祉サービス事業所を、計画相談支援・居宅介護・重度訪問介護・共同生活援助（グループホーム）・就労継続支援Ａ型・Ｂ型など、サービス種別ごとにご紹介するリンク集です。",
+  "url": "https://mizumaki-aikokoro.github.io/jigyosho-list.html",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "障がい福祉サービス事業所一覧（種別別）",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "相談支援事業所一覧", "url": "https://mizumaki-aikokoro.github.io/soudan-jigyosho-list.html"},
+      {"@type": "ListItem", "position": 2, "name": "居宅介護事業所一覧", "url": "https://mizumaki-aikokoro.github.io/kyotaku-kaigo-list.html"},
+      {"@type": "ListItem", "position": 3, "name": "重度訪問介護事業所一覧", "url": "https://mizumaki-aikokoro.github.io/juudo-houmon-kaigo-list.html"},
+      {"@type": "ListItem", "position": 4, "name": "共同生活援助（グループホーム）事業所一覧", "url": "https://mizumaki-aikokoro.github.io/gh-list.html"},
+      {"@type": "ListItem", "position": 5, "name": "就労継続支援Ａ型事業所一覧", "url": "https://mizumaki-aikokoro.github.io/shurou-a-list.html"},
+      {"@type": "ListItem", "position": 6, "name": "就労継続支援Ｂ型事業所一覧", "url": "https://mizumaki-aikokoro.github.io/shurou-b-list.html"},
+      {"@type": "ListItem", "position": 7, "name": "訪問看護ステーション一覧", "url": "https://mizumaki-aikokoro.github.io/houmon-kango-list.html"},
+      {"@type": "ListItem", "position": 8, "name": "短期入所事業所一覧", "url": "https://mizumaki-aikokoro.github.io/tanki-nyusho-list.html"},
+      {"@type": "ListItem", "position": 9, "name": "精神科病院・クリニック一覧", "url": "https://mizumaki-aikokoro.github.io/seishinka-byoin-list.html"},
+      {"@type": "ListItem", "position": 10, "name": "指定自立支援医療機関（病院・診療所）一覧", "url": "https://mizumaki-aikokoro.github.io/byoin-shinryojo-list.html"},
+      {"@type": "ListItem", "position": 11, "name": "障がい福祉課 連絡先一覧", "url": "https://mizumaki-aikokoro.github.io/gyosei-madoguchi-list.html"}
+    ]
+  }
+}
+</script>
 <style>
   :root {
     --green-dark: #4A7A3E;
@@ -107,12 +143,18 @@
   footer { background: var(--green-dark); color: #fff; text-align: center; padding: 22px 0; font-size: 0.8rem; }
   footer a { color: #fff; }
 
-  nav.site-nav ul { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
-  nav.site-nav li { flex: 0 0 auto; }
   @media (max-width: 700px) {
+    nav.site-nav ul { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+    nav.site-nav li { flex: 0 0 auto; }
     nav.site-nav a { font-size: 0.8rem; padding: 6px 10px; white-space: nowrap; }
   }
   @media (max-width: 600px) { .hero h1 { font-size: 1.2rem; } .header-tel a { font-size: 1.05rem; } }
+  nav.breadcrumb { background: #fff; border-bottom: 1px solid #eee; font-size: 0.8rem; padding: 8px 0; }
+  nav.breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+  nav.breadcrumb li { color: var(--text-sub); }
+  nav.breadcrumb li:not(:last-child)::after { content: "›"; margin: 0 6px; color: var(--text-sub); }
+  nav.breadcrumb a { color: var(--green-dark); text-decoration: none; }
+  nav.breadcrumb a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -120,7 +162,7 @@
 <header class="site-header">
   <div class="wrap">
     <div class="brand">
-      <img src="logo.png" alt="水巻相談支援事業所 ロゴ">
+      <img src="logo.png" alt="水巻相談支援事業所 ロゴ" width="52" height="52">
       <div class="brand-text">
         <div class="main">水巻相談支援事業所</div>
         <div class="sub">福岡県遠賀郡水巻町の障がい福祉相談支援事業所</div>
@@ -152,6 +194,15 @@
   </nav>
 </header>
 
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <div class="wrap">
+    <ol>
+      <li><a href="index.html">トップページ</a></li>
+      <li aria-current="page">障がい福祉サービス事業所一覧</li>
+    </ol>
+  </div>
+</nav>
+
 <section class="hero" id="list-top">
   <div class="wrap">
     <h1>障がい福祉サービス事業所一覧</h1>
@@ -166,6 +217,7 @@
 <div class="wrap">
   <div class="notice">
     <h2>ご利用にあたって</h2>
+    <p><strong>最終更新日：2026年7月29日</strong></p>
     <p>本一覧は、福岡県が公表する指定障害福祉サービス事業所情報をもとに作成しています。事業所名・住所・電話番号は変更となる場合がありますので、お問い合わせの際は事前に事業所へご確認ください。</p>
     <p>掲載内容の追加・修正、または貴事業所情報の掲載をご希望の場合は、<a href="index.html#contact">お問い合わせ</a>よりご連絡ください。</p>
   </div>

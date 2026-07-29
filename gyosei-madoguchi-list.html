@@ -13,7 +13,31 @@
 <meta property="og:image" content="logo.png">
 <meta property="og:locale" content="ja_JP">
 <link rel="icon" href="logo.png" type="image/png">
-<style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "トップページ", "item": "https://mizumaki-aikokoro.github.io/"},
+    {"@type": "ListItem", "position": 2, "name": "障がい福祉サービス事業所一覧", "item": "https://mizumaki-aikokoro.github.io/jigyosho-list.html"},
+    {"@type": "ListItem", "position": 3, "name": "障がい福祉課 連絡先一覧", "item": "https://mizumaki-aikokoro.github.io/gyosei-madoguchi-list.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "障がい福祉課 連絡先一覧",
+  "description": "福岡県および県内全60市町村（北九州市・福岡市の各区含む）の障がい福祉担当窓口の連絡先を、福岡地区・北九州地区・筑豊地区・筑後地区・京築地区の地区別にご紹介します。",
+  "url": "https://mizumaki-aikokoro.github.io/gyosei-madoguchi-list.html",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "障がい福祉課 連絡先一覧",
+    "numberOfItems": 75
+  }
+}
+</script><style>
   :root {
     --green-dark: #4A7A3E;
     --green-mid: #8FB584;
@@ -78,12 +102,18 @@
   .back-contact .home-btn { display: inline-block; margin-top: 14px; background: var(--green-dark); color: #fff; text-decoration: none; padding: 10px 26px; border-radius: 24px; font-size: 0.9rem; }
   footer { background: var(--green-dark); color: #fff; text-align: center; padding: 22px 0; font-size: 0.8rem; }
   footer a { color: #fff; }
-  nav.site-nav ul { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
-  nav.site-nav li { flex: 0 0 auto; }
   @media (max-width: 700px) {
+    nav.site-nav ul { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+    nav.site-nav li { flex: 0 0 auto; }
     nav.site-nav a { font-size: 0.8rem; padding: 6px 10px; white-space: nowrap; }
   }
   @media (max-width: 600px) { .hero h1 { font-size: 1.2rem; } .header-tel a { font-size: 1.05rem; } }
+  nav.breadcrumb { background: #fff; border-bottom: 1px solid #eee; font-size: 0.8rem; padding: 8px 0; }
+  nav.breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+  nav.breadcrumb li { color: var(--text-sub); }
+  nav.breadcrumb li:not(:last-child)::after { content: "›"; margin: 0 6px; color: var(--text-sub); }
+  nav.breadcrumb a { color: var(--green-dark); text-decoration: none; }
+  nav.breadcrumb a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -91,7 +121,7 @@
 <header class="site-header">
   <div class="wrap">
     <div class="brand">
-      <img src="logo.png" alt="水巻相談支援事業所 ロゴ">
+      <img src="logo.png" alt="水巻相談支援事業所 ロゴ" width="52" height="52">
       <div class="brand-text">
         <div class="main">水巻相談支援事業所</div>
         <div class="sub">福岡県遠賀郡水巻町の障がい福祉相談支援事業所</div>
@@ -123,6 +153,15 @@
   </nav>
 </header>
 
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <div class="wrap">
+    <ol>
+      <li><a href="index.html">トップページ</a></li>
+      <li><a href="jigyosho-list.html">障がい福祉サービス事業所一覧</a></li>
+      <li aria-current="page">障がい福祉課 連絡先一覧</li>
+    </ol>
+  </div>
+</nav>
 <section class="hero" id="list-top">
   <div class="wrap">
     <h1>福岡県 障がい福祉課 連絡先一覧</h1>
@@ -135,6 +174,7 @@
 <div class="wrap">
   <div class="notice">
     <h2>ご利用にあたって</h2>
+    <p><strong>最終更新日：2026年7月29日</strong></p>
     <p>本一覧は、独立行政法人自動車事故対策機構（NASVA）「介護者なき後、親なき後」サイトの公表情報をもとに作成しています。担当部署名・住所・電話番号・リンク先は変更となる場合がありますので、最新情報は各自治体の公式ホームページでご確認ください。</p>
     <p>掲載内容の追加・修正をご希望の場合は、<a href="index.html#contact">お問い合わせ</a>よりご連絡ください。</p>
   </div>
