@@ -38,7 +38,56 @@
     "numberOfItems": 503
   }
 }
-</script><style>
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "相談支援事業所とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "相談支援事業所とは、障害福祉サービスや障害児通所支援を利用する際に必要な「サービス等利用計画」（障害児の場合は「障害児支援利用計画」）の作成や、利用開始後の見直し（モニタリング）を行う事業所です。相談支援専門員が、ご本人やご家族の状況を踏まえて、適切なサービスの組み合わせを一緒に検討します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "相談支援事業所はどうやって選べばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "決まったルールはなく、お住まいの市町村が公表している事業所一覧の中からご自身で選んで契約できます。通いやすさに加えて、対応可能な障害種別（身体・知的・精神・障がい児など）や年齢層、現在の空き状況（新規受け入れ可否）を事前に事業所へ確認することをおすすめします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "相談支援事業所の利用に料金はかかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "計画相談支援・障がい児相談支援の利用料は、原則として利用者負担はありません（全額が公費で賄われます）。ただし自治体や制度改正により取り扱いが異なる場合がありますので、詳細はお住まいの市町村窓口または各事業所へご確認ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "相談支援事業所を途中で変更することはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可能です。転居や、ご本人・ご家族との相性、対応内容の変更などの理由で、契約中の事業所を変更できます。変更を希望する場合は、現在契約中の事業所へその旨を伝え、市町村窓口にもご相談ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "遠賀郡・水巻町エリアで相談支援事業所を探しています。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "遠賀郡水巻町・遠賀町・岡垣町・芦屋町エリアで相談支援をお探しの場合は、水巻相談支援事業所でもご相談を承っております。お電話（080-9193-8330）にてお気軽にお問い合わせください。"
+      }
+    }
+  ]
+}
+</script>
+<style>
   :root {
     --green-dark: #4A7A3E;
     --green-mid: #8FB584;
@@ -218,6 +267,7 @@
   }
   .region-banner h2 { margin: 0 0 6px; font-size: 1.15rem; }
   .region-banner p { margin: 0; font-size: 0.85rem; opacity: 0.9; }
+  .region-banner p.region-intro { max-width: 720px; margin: 10px auto 0; line-height: 1.7; }
 
   section.town-section { padding: 40px 0; }
   section.town-section.alt { background: var(--green-light); }
@@ -232,6 +282,14 @@
     color: var(--text-sub);
     margin: 0 0 26px;
     font-size: 0.85rem;
+  }
+  p.area-intro {
+    max-width: 680px;
+    margin: -6px auto 26px;
+    color: var(--text-sub);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    text-align: center;
   }
 
   .cards {
@@ -272,6 +330,27 @@
     text-decoration: none;
   }
   .office-card p.office-tel a:hover { text-decoration: underline; }
+
+  .faq { margin: 50px 0 40px; }
+  .faq h2.section-title { margin-bottom: 26px; }
+  .faq details {
+    background: #fff;
+    border: 1px solid #e6ede4;
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+  }
+  .faq summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--green-dark);
+    font-size: 0.95rem;
+  }
+  .faq details p {
+    margin: 10px 0 0;
+    color: var(--text-sub);
+    font-size: 0.88rem;
+  }
 
   .back-contact {
     background: #fff;
@@ -469,6 +548,7 @@
   <div class="region-banner" id="group-onga">
     <h2>遠賀郡</h2>
     <p>水巻町・遠賀町・岡垣町・芦屋町</p>
+      <p class="region-intro">遠賀郡は水巻町・遠賀町・岡垣町・芦屋町の4町からなるエリアで、福岡県の地域区分では「北九州地区」に含まれます。町をまたいで生活圏が近いため、お住まいの町にこだわらず、通いやすい範囲であれば近隣町の事業所も含めて比較検討することをおすすめします。事業所によって対応できる障害種別や年齢層（児童・成人）が異なりますので、まずはお電話で空き状況や対応内容をご確認ください。</p>
   </div>
 </div>
 
@@ -613,6 +693,7 @@
 <section class="town-section" id="nakama">
   <div class="wrap">
     <h2 class="section-title">中間市 の相談支援事業所</h2>
+    <p class="area-intro">中間市は「北九州地区」に位置するエリアです。市内の事業所に加えて、通いやすい範囲であれば隣接する遠賀郡や北九州市の事業所も選択肢に入れて比較検討いただけます。</p>
     <p class="section-sub">8事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -671,6 +752,7 @@
   <div class="region-banner" id="group-kitaq">
     <h2>北九州市</h2>
     <p>門司区・小倉北区・若松区・八幡東区・戸畑区・八幡西区</p>
+      <p class="region-intro">北九州市は門司区・小倉北区・若松区・八幡東区・戸畑区・八幡西区の6区からなる政令指定都市で、区ごとに多くの相談支援事業所が指定を受けています。区内でも事業所によって対応可能な障害種別や年齢層が異なるため、まずはお住まいの区の一覧から、ご本人の状況に合った事業所へお問い合わせいただくのがスムーズです。</p>
   </div>
 </div>
 
@@ -1284,6 +1366,7 @@
   <div class="region-banner" id="group-fukuokacity">
     <h2>福岡市</h2>
     <p>南区・城南区・西区・早良区・中央区・東区・博多区</p>
+      <p class="region-intro">福岡市は東区・博多区・中央区・南区・城南区・早良区・西区の7区を有する福岡県最大の都市で、相談支援事業所の数も県内で最も多いエリアです。選択肢が多い分、事業所ごとの得意分野（障がい児相談支援、精神障がい、重度障がいなど）や空き状況に差がありますので、複数の事業所に問い合わせて比較されることをおすすめします。</p>
   </div>
 </div>
 
@@ -2512,6 +2595,7 @@
   <div class="region-banner" id="group-kasuya-gun">
     <h2>糟屋郡</h2>
     <p>志免町・須恵町・宇美町・久山町・新宮町・粕屋町・篠栗町</p>
+      <p class="region-intro">糟屋郡は志免町・須恵町・宇美町・久山町・新宮町・粕屋町・篠栗町の7町からなり、福岡県の地域区分では「福岡地区」に含まれるエリアです。町ごとの事業所数には差がありますので、お住まいの町に事業所が見つからない場合は、隣接する町の事業所も選択肢に入れて探すと見つかりやすくなります。</p>
   </div>
 </div>
 
@@ -2797,6 +2881,7 @@
 <section class="town-section alt" id="koga">
   <div class="wrap">
     <h2 class="section-title">古賀市 の相談支援事業所</h2>
+    <p class="area-intro">古賀市は「福岡地区」に位置するエリアです。市内の相談支援事業所を中心に、通いやすい範囲であれば近隣市町の一覧もあわせてご確認ください。</p>
     <p class="section-sub">10事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -2866,6 +2951,7 @@
 <section class="town-section" id="fukutsu">
   <div class="wrap">
     <h2 class="section-title">福津市 の相談支援事業所</h2>
+    <p class="area-intro">福津市は「福岡地区」に位置するエリアです。お住まいの地域から通いやすい事業所を、近隣市町の一覧もあわせてご検討ください。</p>
     <p class="section-sub">13事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -2953,6 +3039,7 @@
 <section class="town-section alt" id="kasuga">
   <div class="wrap">
     <h2 class="section-title">春日市 の相談支援事業所</h2>
+    <p class="area-intro">春日市は「福岡地区」に位置するコンパクトな市です。市内の事業所とあわせて、近隣市の一覧も参考にしていただくと選択肢が広がります。</p>
     <p class="section-sub">5事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -2992,6 +3079,7 @@
 <section class="town-section" id="onojo">
   <div class="wrap">
     <h2 class="section-title">大野城市 の相談支援事業所</h2>
+    <p class="area-intro">大野城市は「福岡地区」に位置するエリアです。市内の事業所に加え、近隣市の一覧も参考にしてください。</p>
     <p class="section-sub">23事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -3139,6 +3227,7 @@
 <section class="town-section alt" id="chikushino">
   <div class="wrap">
     <h2 class="section-title">筑紫野市 の相談支援事業所</h2>
+    <p class="area-intro">筑紫野市は「福岡地区」に位置するエリアです。市内の事業所に加えて、近隣市の一覧もあわせてご確認ください。</p>
     <p class="section-sub">11事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -3214,6 +3303,7 @@
 <section class="town-section" id="nakagawa">
   <div class="wrap">
     <h2 class="section-title">那珂川市 の相談支援事業所</h2>
+    <p class="area-intro">那珂川市は「福岡地区」に位置するエリアです。市内の事業所が見つからない場合は、近隣市の一覧も参考にしていただくと選択肢が広がります。</p>
     <p class="section-sub">7事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -3265,6 +3355,7 @@
 <section class="town-section alt" id="munakata">
   <div class="wrap">
     <h2 class="section-title">宗像市 の相談支援事業所</h2>
+    <p class="area-intro">宗像市は「福岡地区」に位置し、世界遺産「宗像・沖ノ島と関連遺産群」でも知られるエリアです。市内の事業所に加え、近隣市の一覧もあわせてご確認ください。</p>
     <p class="section-sub">24事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -3418,6 +3509,7 @@
 <section class="town-section" id="nogata">
   <div class="wrap">
     <h2 class="section-title">直方市 の相談支援事業所</h2>
+    <p class="area-intro">直方市は「筑豊地区」の中心都市のひとつです。市内の事業所に加えて、近隣の筑豊地区各市町の一覧もあわせてご確認ください。</p>
     <p class="section-sub">14事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -3511,6 +3603,7 @@
 <section class="town-section alt" id="kurate">
   <div class="wrap">
     <h2 class="section-title">鞍手町 の相談支援事業所</h2>
+    <p class="area-intro">鞍手町は「筑豊地区」に位置するエリアです。町内の事業所が見つからない場合は、近隣の筑豊地区各市町の事業所も選択肢に入れて探されることをおすすめします。</p>
     <p class="section-sub">1事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -3526,6 +3619,7 @@
 <section class="town-section" id="miyawaka">
   <div class="wrap">
     <h2 class="section-title">宮若市 の相談支援事業所</h2>
+    <p class="area-intro">宮若市は「筑豊地区」に位置するエリアです。市内の事業所が少ない場合は、近隣の筑豊地区各市町の一覧もあわせてご確認ください。</p>
     <p class="section-sub">1事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -3541,6 +3635,7 @@
 <section class="town-section alt" id="iizuka">
   <div class="wrap">
     <h2 class="section-title">飯塚市 の相談支援事業所</h2>
+    <p class="area-intro">飯塚市は「筑豊地区」最大の都市で、相談支援事業所の数も筑豊地区内では多い方のエリアです。</p>
     <p class="section-sub">22事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -3683,6 +3778,7 @@
   <div class="region-banner" id="group-tagawagun">
     <h2>田川郡</h2>
     <p>福智町・糸田町・川崎町・大任町・添田町</p>
+      <p class="region-intro">田川郡は福智町・糸田町・川崎町・大任町・添田町の5町からなる「筑豊地区」のエリアです。町によっては指定を受けている相談支援事業所が少数、または現時点で確認されていない場合もありますので、隣接する田川市の事業所もあわせて探されることをおすすめします。</p>
   </div>
 </div>
 
@@ -3822,6 +3918,7 @@
 <section class="town-section alt" id="tagawa">
   <div class="wrap">
     <h2 class="section-title">田川市 の相談支援事業所</h2>
+    <p class="area-intro">田川市は「筑豊地区」の中心都市のひとつです。市内の事業所に加えて、隣接する田川郡各町の一覧もあわせてご確認ください。</p>
     <p class="section-sub">11事業所（福岡県指定・計画相談支援）</p>
     <div class="cards office-cards">
       <div class="card office-card">
@@ -3894,6 +3991,32 @@
   </div>
 </section>
 
+
+<div class="wrap">
+  <div class="faq">
+    <h2 class="section-title">よくあるご質問</h2>
+    <details>
+      <summary>相談支援事業所とは何ですか？</summary>
+      <p>相談支援事業所とは、障害福祉サービスや障害児通所支援を利用する際に必要な「サービス等利用計画」（障害児の場合は「障害児支援利用計画」）の作成や、利用開始後の見直し（モニタリング）を行う事業所です。相談支援専門員が、ご本人やご家族の状況を踏まえて、適切なサービスの組み合わせを一緒に検討します。</p>
+    </details>
+    <details>
+      <summary>相談支援事業所はどうやって選べばいいですか？</summary>
+      <p>決まったルールはなく、お住まいの市町村が公表している事業所一覧の中からご自身で選んで契約できます。通いやすさに加えて、対応可能な障害種別（身体・知的・精神・障がい児など）や年齢層、現在の空き状況（新規受け入れ可否）を事前に事業所へ確認することをおすすめします。</p>
+    </details>
+    <details>
+      <summary>相談支援事業所の利用に料金はかかりますか？</summary>
+      <p>計画相談支援・障がい児相談支援の利用料は、原則として利用者負担はありません（全額が公費で賄われます）。ただし自治体や制度改正により取り扱いが異なる場合がありますので、詳細はお住まいの市町村窓口または各事業所へご確認ください。</p>
+    </details>
+    <details>
+      <summary>相談支援事業所を途中で変更することはできますか？</summary>
+      <p>可能です。転居や、ご本人・ご家族との相性、対応内容の変更などの理由で、契約中の事業所を変更できます。変更を希望する場合は、現在契約中の事業所へその旨を伝え、市町村窓口にもご相談ください。</p>
+    </details>
+    <details>
+      <summary>遠賀郡・水巻町エリアで相談支援事業所を探しています。</summary>
+      <p>遠賀郡水巻町・遠賀町・岡垣町・芦屋町エリアで相談支援をお探しの場合は、水巻相談支援事業所でもご相談を承っております。お電話（080-9193-8330）にてお気軽にお問い合わせください。</p>
+    </details>
+  </div>
+</div>
 
 <div class="wrap">
   <div class="back-contact">
