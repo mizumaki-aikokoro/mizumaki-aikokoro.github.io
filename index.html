@@ -240,6 +240,38 @@
   .qual-list { margin: 6px 0 0; padding-left: 1.2em; font-size: 0.9rem; color: var(--text-sub); }
   .qual-list li { margin-bottom: 4px; }
 
+  .access-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+  }
+  .map-embed {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e6ede4;
+  }
+  .qr-box {
+    background: #fff;
+    border: 1px solid #e6ede4;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .qr-box img { display: block; margin: 0 auto; }
+  .qr-box p { font-size: 0.82rem; color: var(--text-sub); margin: 10px 0 0; }
+  @media (max-width: 700px) {
+    .access-grid { grid-template-columns: 1fr; }
+    .map-embed { min-height: 220px; }
+  }
+
   .flow {
     display: flex;
     flex-wrap: wrap;
@@ -505,6 +537,24 @@
         </td>
       </tr>
     </table>
+
+    <h3 style="color:var(--green-dark); font-size:1.05rem; margin:34px 0 14px;">アクセス・地図</h3>
+    <div class="access-grid">
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E9%81%A0%E8%B3%80%E9%83%A1%E6%B0%B4%E5%B7%BB%E7%94%BA%E7%8C%AA%E7%86%8A4-8-31-10&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="水巻相談支援事業所・心の健康教室 地図"></iframe>
+      </div>
+      <div class="qr-box">
+        <img src="qr-map.png" alt="水巻相談支援事業所の地図QRコード" width="150" height="150">
+        <p>QRコードを読み取ると<br>Googleマップが開きます</p>
+        <a class="mail-btn" style="text-decoration:none; display:inline-block; margin-top:6px;"
+           href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E9%81%A0%E8%B3%80%E9%83%A1%E6%B0%B4%E5%B7%BB%E7%94%BA%E7%8C%AA%E7%86%8A4-8-31-10"
+           target="_blank" rel="noopener">Googleマップで見る</a>
+      </div>
+    </div>
   </div>
 </section>
 
