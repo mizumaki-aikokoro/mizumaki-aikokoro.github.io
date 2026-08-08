@@ -142,6 +142,66 @@
     border-radius: 14px;
   }
 
+  .featured-links { padding: 8px 0 36px; }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  .featured-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 14px;
+    padding: 22px 24px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+  .featured-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+  .featured-card .ficon {
+    flex: 0 0 auto;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+  }
+  .featured-card .ftext { flex: 1 1 auto; }
+  .featured-card .flabel {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 9px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+  }
+  .featured-card h3 { margin: 0 0 4px; font-size: 1.1rem; }
+  .featured-card p { margin: 0; font-size: 0.85rem; }
+  .featured-card .farrow { flex: 0 0 auto; font-size: 1.3rem; }
+
+  .featured-card.primary {
+    background: linear-gradient(135deg, var(--green-dark) 0%, #365f2d 100%);
+    color: #fff;
+  }
+  .featured-card.primary .ficon { background: rgba(255,255,255,0.18); }
+  .featured-card.primary .flabel { background: var(--pink); color: #fff; }
+  .featured-card.primary p { color: rgba(255,255,255,0.9); }
+
+  .featured-card.secondary {
+    background: #fff;
+    border: 2px solid var(--pink);
+    color: var(--text);
+  }
+  .featured-card.secondary .ficon { background: #FCEBE9; }
+  .featured-card.secondary .flabel { background: var(--green-light); color: var(--green-dark); }
+  .featured-card.secondary p { color: var(--text-sub); }
+  .featured-card.secondary .farrow { color: var(--pink); }
+
+  @media (max-width: 600px) {
+    .featured-card { padding: 18px 18px; }
+    .featured-card h3 { font-size: 1rem; }
+  }
+
   .notice {
     background: #FFF7E6;
     border: 1px solid #F0D9A0;
@@ -416,7 +476,7 @@
 <section class="hero">
   <div class="wrap">
     <div class="hero-text">
-      <h1>水巻町・遠賀町・芦屋町・岡垣町を中心に福岡県内で、<br>障がいのある方とご家族の相談支援を行っています</h1>
+      <h1>福岡県内で、<br>障がいのある方とご家族の相談支援を行っています</h1>
       <p class="lead">
         水巻相談支援事業所・心の健康教室は、福岡県遠賀郡水巻町を拠点に、指定計画相談支援・指定障がい児相談支援を行う事業所です。
         相談支援専門員（精神科看護師）が、お一人おひとりに寄り添い、サービス等利用計画の作成から日々の相談まで継続してサポートします。
@@ -427,6 +487,31 @@
     </div>
     <div class="hero-logo">
       <img src="logo.png" alt="水巻相談支援事業所・心の健康教室" width="160" height="160">
+    </div>
+  </div>
+</section>
+
+<section class="featured-links">
+  <div class="wrap">
+    <div class="featured-grid">
+      <a class="featured-card primary" href="jigyosho-list.html">
+        <div class="ficon">📋</div>
+        <div class="ftext">
+          <span class="flabel">まずはこちら</span>
+          <h3>障がい福祉サービス事業所一覧</h3>
+          <p>福岡県内の相談支援・居宅介護・グループホームなど、サービス種別ごとに事業所を検索できます。</p>
+        </div>
+        <div class="farrow">›</div>
+      </a>
+      <a class="featured-card secondary" href="kokoro-kyoshitsu.html">
+        <div class="ficon">💚</div>
+        <div class="ftext">
+          <span class="flabel">併設事業</span>
+          <h3>心の健康教室</h3>
+          <p>心の仕組みを学び、より幸せな考え方を身につけるメンタルトレーニングのご案内です。</p>
+        </div>
+        <div class="farrow">›</div>
+      </a>
     </div>
   </div>
 </section>
