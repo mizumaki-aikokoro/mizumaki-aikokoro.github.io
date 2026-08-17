@@ -53,6 +53,8 @@
   section.town-section.alt .card { background: #fff; }
   .card h3 { color: var(--green-dark); margin: 0 0 10px; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
   .card h3::before { content: ""; width: 8px; height: 8px; background: var(--pink); border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .card h3 a { color: var(--green-dark); text-decoration: none; }
+  .card h3 a:hover { text-decoration: underline; }
   .office-card p { margin: 0 0 4px; font-size: 0.85rem; color: var(--text-sub); }
   .office-card p:last-child { margin-bottom: 0; }
   .office-card p.office-tel a { font-weight: bold; color: var(--green-dark); text-decoration: none; }
