@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mizumaki-aikokoro.github.io/sitemap.xml
