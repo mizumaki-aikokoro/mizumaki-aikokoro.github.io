@@ -440,6 +440,23 @@
     .hero h1 { font-size: 1.3rem; }
     .header-tel a { font-size: 1.05rem; }
   }
+
+  .service-accordion {
+    background: #fff;
+    border: 1px solid #e6ede4;
+    border-radius: 8px;
+    padding: 16px 22px;
+    margin: 0 0 14px;
+  }
+  .service-accordion summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--green-dark);
+    font-size: 1.05rem;
+    list-style: revert;
+  }
+  .service-accordion summary::marker { color: var(--green-mid); }
+  .service-accordion .cards { margin-top: 18px; }
 </style>
 </head>
 <body>
@@ -523,107 +540,117 @@
 <section class="alt" id="fukushi-guide">
   <div class="wrap">
     <h2 class="section-title">障がい福祉サービスとは？</h2>
-    <p class="section-sub">障がいのある方が日常生活や社会生活を送るうえで利用できる、国の制度に基づいた支援サービスです。状態やご希望に応じて、下記のようにさまざまな種類があります。</p>
+    <p class="section-sub">障がいのある方が日常生活や社会生活を送るうえで利用できる、国の制度に基づいた支援サービスです。状態やご希望に応じて、下記のようにさまざまな種類があります。項目をクリックすると詳しい説明が開きます。</p>
 
-    <h3 style="color:var(--green-dark); font-size:1.05rem; margin:30px 0 14px;">① 自宅や外出を支えるサービス（訪問系）</h3>
-    <div class="cards">
-      <div class="card">
-        <h3>居宅介護（ホームヘルプ）</h3>
-        <p>ヘルパーが自宅に来て、お風呂・食事・掃除などの手伝いをしてくれるサービスです。</p>
+    <details class="service-accordion">
+      <summary>① 自宅や外出を支えるサービス（訪問系）</summary>
+      <div class="cards">
+        <div class="card">
+          <h3>居宅介護（ホームヘルプ）</h3>
+          <p>ヘルパーが自宅に来て、お風呂・食事・掃除などの手伝いをしてくれるサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>重度訪問介護</h3>
+          <p>体や心に重い障がいがあり、いつも介護が必要な方のために、自宅での介護や外出の手伝いを長時間まとめて行うサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>同行援護</h3>
+          <p>目が不自由な方が外出するとき、付き添って周りの様子を教えたり、安全に移動できるよう手伝うサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>行動援護</h3>
+          <p>知的障がいや精神障がいがあり、行動するときに危険が生じやすい方のために、外出や日常生活を安全にサポートするサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>重度障害者等包括支援</h3>
+          <p>とても重い障がいがあり、たくさんの支援が必要な方のために、いろいろなサービスをまとめて利用できるようにする制度です。</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>重度訪問介護</h3>
-        <p>体や心に重い障がいがあり、いつも介護が必要な方のために、自宅での介護や外出の手伝いを長時間まとめて行うサービスです。</p>
-      </div>
-      <div class="card">
-        <h3>同行援護</h3>
-        <p>目が不自由な方が外出するとき、付き添って周りの様子を教えたり、安全に移動できるよう手伝うサービスです。</p>
-      </div>
-      <div class="card">
-        <h3>行動援護</h3>
-        <p>知的障がいや精神障がいがあり、行動するときに危険が生じやすい方のために、外出や日常生活を安全にサポートするサービスです。</p>
-      </div>
-      <div class="card">
-        <h3>重度障害者等包括支援</h3>
-        <p>とても重い障がいがあり、たくさんの支援が必要な方のために、いろいろなサービスをまとめて利用できるようにする制度です。</p>
-      </div>
-    </div>
+    </details>
 
-    <h3 style="color:var(--green-dark); font-size:1.05rem; margin:34px 0 14px;">② 日中に通ったり、短期間泊まったりするサービス</h3>
-    <div class="cards">
-      <div class="card">
-        <h3>療養介護</h3>
-        <p>入院しながら、いつも医療的なケアと介護が必要な方のために、病院で機能訓練や看護、日常生活の世話を行うサービスです。</p>
+    <details class="service-accordion">
+      <summary>② 日中に通ったり、短期間泊まったりするサービス</summary>
+      <div class="cards">
+        <div class="card">
+          <h3>療養介護</h3>
+          <p>入院しながら、いつも医療的なケアと介護が必要な方のために、病院で機能訓練や看護、日常生活の世話を行うサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>生活介護</h3>
+          <p>昼間に施設へ通い、お風呂や食事の介護を受けたり、作業や創作活動をしたりするサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>短期入所（ショートステイ）</h3>
+          <p>家で介護しているご家族が病気などで一時的に介護できないとき、数日だけ施設に泊まって介護を受けられるサービスです。</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>生活介護</h3>
-        <p>昼間に施設へ通い、お風呂や食事の介護を受けたり、作業や創作活動をしたりするサービスです。</p>
-      </div>
-      <div class="card">
-        <h3>短期入所（ショートステイ）</h3>
-        <p>家で介護しているご家族が病気などで一時的に介護できないとき、数日だけ施設に泊まって介護を受けられるサービスです。</p>
-      </div>
-    </div>
+    </details>
 
-    <h3 style="color:var(--green-dark); font-size:1.05rem; margin:34px 0 14px;">③ 施設に入所して生活するサービス</h3>
-    <div class="cards">
-      <div class="card">
-        <h3>施設入所支援</h3>
-        <p>施設に入所して生活する方のために、主に夜間、食事やお風呂などの介護を行うサービスです。</p>
+    <details class="service-accordion">
+      <summary>③ 施設に入所して生活するサービス</summary>
+      <div class="cards">
+        <div class="card">
+          <h3>施設入所支援</h3>
+          <p>施設に入所して生活する方のために、主に夜間、食事やお風呂などの介護を行うサービスです。</p>
+        </div>
       </div>
-    </div>
+    </details>
 
-    <h3 style="color:var(--green-dark); font-size:1.05rem; margin:34px 0 14px;">④ 訓練や仕事につながるサービス</h3>
-    <div class="cards">
-      <div class="card">
-        <h3>自立訓練（機能訓練）</h3>
-        <p>体の機能を維持したり回復させたりするために、リハビリの練習をするサービスです。</p>
+    <details class="service-accordion">
+      <summary>④ 訓練や仕事につながるサービス</summary>
+      <div class="cards">
+        <div class="card">
+          <h3>自立訓練（機能訓練）</h3>
+          <p>体の機能を維持したり回復させたりするために、リハビリの練習をするサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>自立訓練（生活訓練）</h3>
+          <p>一人暮らしなど自立した生活が送れるように、食事や家事などの練習をするサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>宿泊型自立訓練</h3>
+          <p>自立訓練を受けながら施設に泊まり、生活する力を身につけるサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>就労移行支援</h3>
+          <p>一般の会社で働きたい方のために、仕事に必要な知識や技術の練習、職探しの手伝いをするサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>就労継続支援A型</h3>
+          <p>会社と雇用契約を結び、お給料をもらいながら働く場を提供するサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>就労継続支援B型</h3>
+          <p>雇用契約を結ばず、自分のペースで作業をしながら工賃（お給料のようなもの）を受け取れる働く場です。</p>
+        </div>
+        <div class="card">
+          <h3>就労定着支援</h3>
+          <p>就職した後も仕事を長く続けられるように、会社や生活の困りごとを相談できるサポートです。</p>
+        </div>
+        <div class="card">
+          <h3>自立生活援助</h3>
+          <p>一人暮らしを始めた方の家を定期的に訪問し、困りごとがないか確認したり相談にのったりするサービスです。</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>自立訓練（生活訓練）</h3>
-        <p>一人暮らしなど自立した生活が送れるように、食事や家事などの練習をするサービスです。</p>
-      </div>
-      <div class="card">
-        <h3>宿泊型自立訓練</h3>
-        <p>自立訓練を受けながら施設に泊まり、生活する力を身につけるサービスです。</p>
-      </div>
-      <div class="card">
-        <h3>就労移行支援</h3>
-        <p>一般の会社で働きたい方のために、仕事に必要な知識や技術の練習、職探しの手伝いをするサービスです。</p>
-      </div>
-      <div class="card">
-        <h3>就労継続支援A型</h3>
-        <p>会社と雇用契約を結び、お給料をもらいながら働く場を提供するサービスです。</p>
-      </div>
-      <div class="card">
-        <h3>就労継続支援B型</h3>
-        <p>雇用契約を結ばず、自分のペースで作業をしながら工賃（お給料のようなもの）を受け取れる働く場です。</p>
-      </div>
-      <div class="card">
-        <h3>就労定着支援</h3>
-        <p>就職した後も仕事を長く続けられるように、会社や生活の困りごとを相談できるサポートです。</p>
-      </div>
-      <div class="card">
-        <h3>自立生活援助</h3>
-        <p>一人暮らしを始めた方の家を定期的に訪問し、困りごとがないか確認したり相談にのったりするサービスです。</p>
-      </div>
-    </div>
+    </details>
 
-    <h3 style="color:var(--green-dark); font-size:1.05rem; margin:34px 0 14px;">⑤ 住まいと医療に関するサービス</h3>
-    <div class="cards">
-      <div class="card">
-        <h3>共同生活援助（グループホーム）</h3>
-        <p>少人数で共同生活をする住まいで、主に夜間、食事やお風呂の介護、生活の相談などを受けられるサービスです。</p>
+    <details class="service-accordion">
+      <summary>⑤ 住まいと医療に関するサービス</summary>
+      <div class="cards">
+        <div class="card">
+          <h3>共同生活援助（グループホーム）</h3>
+          <p>少人数で共同生活をする住まいで、主に夜間、食事やお風呂の介護、生活の相談などを受けられるサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>訪問看護</h3>
+          <p>看護師が自宅やグループホームを訪問して、健康管理や医療的なケア、リハビリなどを行うサービスです。</p>
+        </div>
+        <div class="card">
+          <h3>精神科デイケア</h3>
+          <p>心の病気がある方が、生活リズムを整えたり仲間と交流したりしながら、社会復帰を目指して通う医療サービスです。</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>訪問看護</h3>
-        <p>看護師が自宅やグループホームを訪問して、健康管理や医療的なケア、リハビリなどを行うサービスです。</p>
-      </div>
-      <div class="card">
-        <h3>精神科デイケア</h3>
-        <p>心の病気がある方が、生活リズムを整えたり仲間と交流したりしながら、社会復帰を目指して通う医療サービスです。</p>
-      </div>
-    </div>
+    </details>
 
     <p style="text-align:center; margin-top:28px; font-size:0.9rem; color:var(--text-sub);">
       「どのサービスが自分に合うか分からない」という方も、まずは水巻相談支援事業所へお気軽にご相談ください。<br>
