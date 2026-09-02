@@ -457,6 +457,25 @@
   }
   .service-accordion summary::marker { color: var(--green-mid); }
   .service-accordion .cards { margin-top: 18px; }
+
+  .form-embed {
+    max-width: 640px;
+    margin: 18px auto 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .form-embed iframe {
+    display: block;
+    width: 100%;
+    height: 900px;
+    border: none;
+  }
+  .form-fallback {
+    text-align: center;
+    font-size: 0.85rem;
+    margin: 10px 0 0;
+  }
 </style>
 </head>
 <body>
@@ -895,7 +914,10 @@
         当サイトへの事業所情報の掲載（事業所名・電話番号・住所・強み・URLのご紹介）をご希望の方は、
         下記フォームよりお申し込みください。内容確認のうえ、順次サイトに掲載いたします。
       </p>
-      <a class="form-btn" href="https://forms.gle/TQFcuVjqr3NJrQjP8" target="_blank" rel="noopener">掲載申請フォームはこちら</a>
+      <div class="form-embed">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSCvGDBVMlncdtqk4baN_qCdbAzrGJodIFfjfTpcqCXDv0pg/viewform?embedded=true" loading="lazy">読み込んでいます…</iframe>
+      </div>
+      <p class="form-fallback"><a href="https://forms.gle/TQFcuVjqr3NJrQjP8" target="_blank" rel="noopener">フォームが表示されない場合はこちら（新しいタブで開きます）</a></p>
     </div>
   </div>
 </section>
