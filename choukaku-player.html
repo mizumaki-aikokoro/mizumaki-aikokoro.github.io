@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聴覚トレーニング　音源プレイヤー（スタッフ用）</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { background: #f7f9f6; }
+  .player-wrap { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
+  .player-head { text-align: center; margin: 18px 0 22px; }
+  .player-head h1 { font-size: 1.4rem; color: var(--green-dark); margin: 0 0 8px; }
+  .player-head p { font-size: 0.88rem; color: var(--text-sub); margin: 0; }
+
+  .legend { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-bottom: 18px; font-size: 0.8rem; color: var(--text-sub); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.up { background: #6FA85A; }
+  .dot.down { background: #E08585; }
+  .dot.mid { background: #D9B45B; }
+
+  .stopbar { text-align: center; margin: 0 0 20px; }
+  #stopBtn {
+    background: #666; color: #fff; border: none; border-radius: 30px;
+    padding: 10px 28px; font-size: 0.95rem; cursor: pointer;
+  }
+  #stopBtn:active { background: #444; }
+
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 720px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .snd-btn {
+    background: #fff; border: 3px solid #e2e8dd; border-radius: 14px;
+    padding: 16px 10px; text-align: center; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    transition: transform 0.08s ease, box-shadow 0.15s ease;
+    -webkit-tap-highlight-color: transparent; user-select: none;
+  }
+  .snd-btn:active { transform: scale(0.96); }
+  .snd-btn.up { border-color: #b9d8a8; }
+  .snd-btn.down { border-color: #f0c2c2; }
+  .snd-btn.mid { border-color: #ecd79a; }
+  .snd-btn.playing {
+    box-shadow: 0 0 0 4px rgba(74,122,62,0.35);
+    background: #eef6ea;
+  }
+  .snd-btn .no { font-size: 1.5rem; font-weight: bold; color: var(--green-dark); line-height: 1; }
+  .snd-btn .theme { font-size: 0.85rem; color: var(--text); line-height: 1.3; }
+  .snd-btn .cat {
+    font-size: 0.7rem; padding: 2px 10px; border-radius: 10px; color: #fff; margin-top: 2px;
+  }
+  .snd-btn.up .cat { background: #6FA85A; }
+  .snd-btn.down .cat { background: #E08585; }
+  .snd-btn.mid .cat { background: #D9B45B; }
+  .snd-btn .playmark { font-size: 0.75rem; color: var(--green-dark); height: 14px; }
+</style>
+</head>
+<body>
+
+<div class="player-wrap">
+  <div class="player-head">
+    <h1>聴覚トレーニング　音源プレイヤー（スタッフ用）</h1>
+    <p>ボタンを1回タップすると再生します。もう一度タップすると停止します。他の音をタップすると自動的に切り替わります。</p>
+  </div>
+
+  <div class="legend">
+    <span><span class="dot up"></span>気分が上がる</span>
+    <span><span class="dot down"></span>気分が下がる</span>
+    <span><span class="dot mid"></span>どちらとも取れる</span>
+  </div>
+
+  <div class="stopbar">
+    <button id="stopBtn" type="button">■ すべて停止</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</div>
+
+<audio id="player"></audio>
+
+<script>
+const SOUNDS = [
+  {no:1,  file:"no01.wav", theme:"小川のせせらぎ",       cat:"up"},
+  {no:2,  file:"no02.wav", theme:"黒板を爪でひっかく音",  cat:"down"},
+  {no:3,  file:"no03.wav", theme:"メトロノームの音",      cat:"mid"},
+  {no:4,  file:"no04.wav", theme:"雨の降る音（しとしと）", cat:"mid"},
+  {no:5,  file:"no05.wav", theme:"赤ちゃんの笑い声",      cat:"up"},
+  {no:6,  file:"no06.wav", theme:"踏切の警報音",         cat:"down"},
+  {no:7,  file:"no07.wav", theme:"波の音（穏やかな波）",  cat:"up"},
+  {no:8,  file:"no08.wav", theme:"工事現場のドリル音",    cat:"down"},
+  {no:9,  file:"no09.wav", theme:"換気扇・ファンの低音",  cat:"mid"},
+  {no:10, file:"no10.wav", theme:"小鳥のさえずり",        cat:"up"},
+  {no:11, file:"no11.wav", theme:"皿が割れる音",         cat:"down"},
+  {no:12, file:"no12.wav", theme:"時計の秒針の音",       cat:"mid"},
+  {no:13, file:"no13.wav", theme:"焚き火の音（パチパチ）", cat:"up"},
+  {no:14, file:"no14.wav", theme:"怒鳴り声・荒い物音",    cat:"down"},
+  {no:15, file:"no15.wav", theme:"オルゴールの優しい音色", cat:"up"},
+  {no:16, file:"no16.wav", theme:"歯医者のドリル音",      cat:"down"},
+  {no:17, file:"no17.wav", theme:"カフェのざわめき",      cat:"mid"},
+  {no:18, file:"no18.wav", theme:"電車の走行音（ガタゴト）",cat:"mid"},
+  {no:19, file:"no19.wav", theme:"風鈴の涼やかな音",      cat:"up"},
+  {no:20, file:"no20.wav", theme:"蚊の羽音",             cat:"down"},
+];
+
+const CAT_LABEL = {up:"気分が上がる", down:"気分が下がる", mid:"どちらとも取れる"};
+
+const player = document.getElementById("player");
+const grid = document.getElementById("grid");
+let activeBtn = null;
+let activeFile = null;
+
+function setPlaying(btn) {
+  if (activeBtn) {
+    activeBtn.classList.remove("playing");
+    activeBtn.querySelector(".playmark").textContent = "";
+  }
+  activeBtn = btn;
+  if (btn) {
+    btn.classList.add("playing");
+    btn.querySelector(".playmark").textContent = "▶ 再生中";
+  }
+}
+
+function stopAll() {
+  player.pause();
+  player.currentTime = 0;
+  activeFile = null;
+  setPlaying(null);
+}
+
+SOUNDS.forEach(s => {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "snd-btn " + s.cat;
+  btn.innerHTML =
+    '<div class="no">No.' + s.no + '</div>' +
+    '<div class="theme">' + s.theme + '</div>' +
+    '<div class="cat">' + CAT_LABEL[s.cat] + '</div>' +
+    '<div class="playmark"></div>';
+  btn.addEventListener("click", () => {
+    if (activeFile === s.file && !player.paused) {
+      stopAll();
+      return;
+    }
+    player.src = "audio/choukaku/" + s.file;
+    player.currentTime = 0;
+    player.play();
+    activeFile = s.file;
+    setPlaying(btn);
+  });
+  grid.appendChild(btn);
+});
+
+player.addEventListener("ended", () => {
+  activeFile = null;
+  setPlaying(null);
+});
+
+document.getElementById("stopBtn").addEventListener("click", stopAll);
+</script>
+
+</body>
+</html>
