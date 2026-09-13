@@ -141,6 +141,22 @@
     padding: 4px 12px;
     border-radius: 14px;
   }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    background: linear-gradient(135deg, #5B9E48 0%, #46803A 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 13px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(70,128,58,0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(70,128,58,0.45); }
 
   .featured-links { padding: 8px 0 36px; }
   .featured-grid {
@@ -176,6 +192,15 @@
     margin-bottom: 6px;
   }
   .featured-card h3 { margin: 0 0 4px; font-size: 1.1rem; }
+  .fstats { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .fstats span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .featured-card.primary .fstats span { background: rgba(255,255,255,0.22); color: #fff; }
+  .featured-card.secondary .fstats span { background: var(--green-light); color: var(--green-dark); }
   .featured-card p { margin: 0; font-size: 0.85rem; }
   .featured-card p.fnote { margin-top: 8px; font-size: 0.78rem; font-weight: bold; }
   .featured-card.primary p.fnote { color: #fff; }
@@ -523,6 +548,7 @@
       <div class="area-tags">
         <span>水巻町</span><span>遠賀町</span><span>芦屋町</span><span>岡垣町</span><span>遠賀郡</span><span>福岡県全域</span>
       </div>
+      <a class="hero-cta" href="jigyosho-list.html">📋 障がい福祉サービス等事業所一覧を見る（福岡県60市区町村・26種別）</a>
     </div>
     <div class="hero-logo">
       <img src="logo.png" alt="水巻相談支援事業所・心の健康教室" width="160" height="160">
@@ -570,7 +596,8 @@
         <div class="ftext">
           <span class="flabel">まずはこちら</span>
           <h3>障がい福祉サービス等事業所一覧</h3>
-          <p>福岡県内の相談支援・居宅介護・グループホームなど、サービス種別ごとに事業所を検索できます。</p>
+          <div class="fstats"><span>26種類のサービス</span><span>福岡県60市区町村</span></div>
+          <p>相談支援・居宅介護・グループホーム・就労支援など、福岡県内の指定事業所をサービス種別・地域から検索できます。</p>
           <p class="fnote">【事業所様・利用者様　ぜひブックマークされて使用されてください。】</p>
         </div>
         <div class="farrow">›</div>
