@@ -168,6 +168,13 @@
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
   .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(70,128,58,0.45); }
+  .hero-cta-group { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
+  .hero-cta-group .hero-cta { margin-top: 0; }
+  .hero-cta.kokoro {
+    background: linear-gradient(135deg, #F0A6A0 0%, #E28680 100%);
+    box-shadow: 0 4px 14px rgba(224,120,112,0.35);
+  }
+  .hero-cta.kokoro:hover { box-shadow: 0 6px 18px rgba(224,120,112,0.45); }
 
   .featured-links { padding: 8px 0 36px; }
   .featured-grid {
@@ -559,7 +566,10 @@
       <div class="area-tags">
         <span>水巻町</span><span>遠賀町</span><span>芦屋町</span><span>岡垣町</span><span>遠賀郡</span><span>福岡県全域</span>
       </div>
-      <a class="hero-cta" href="jigyosho-list.html">📋 障がい福祉サービス等事業所一覧を見る（福岡県60市区町村・26種別）</a>
+      <div class="hero-cta-group">
+        <a class="hero-cta" href="jigyosho-list.html">📋 障がい福祉サービス等事業所一覧を見る（福岡県60市区町村・26種別）</a>
+        <a class="hero-cta kokoro" href="kokoro-kyoshitsu.html">💚 心の健康教室はこちら（無料の初級コースあり）</a>
+      </div>
     </div>
     <div class="hero-logo">
       <img src="logo.png" alt="水巻相談支援事業所・心の健康教室" width="160" height="160">
