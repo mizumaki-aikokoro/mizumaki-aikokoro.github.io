@@ -45,7 +45,8 @@
   "description": "福岡県遠賀郡水巻町の水巻相談支援事業所・心の健康教室のご紹介動画。1階の相談支援事業所と2階の心の健康教室をご紹介します。",
   "thumbnailUrl": "https://mizumaki-aikokoro.github.io/videos/jigyosho-shokai-poster.jpg",
   "uploadDate": "2026-09-16",
-  "contentUrl": "https://mizumaki-aikokoro.github.io/videos/jigyosho-shokai.mp4"
+  "contentUrl": "https://mizumaki-aikokoro.github.io/videos/jigyosho-shokai.mp4",
+  "embedUrl": "https://www.youtube.com/embed/KhVzHHij6gA"
 }
 </script>
 <style>
@@ -501,6 +502,23 @@
   .service-accordion summary::marker { color: var(--green-mid); }
   .service-accordion .cards { margin-top: 18px; }
 
+  .yt-embed {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+  }
+  .yt-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
   .form-embed {
     max-width: 640px;
     margin: 18px auto 0;
@@ -581,10 +599,9 @@
   <div class="wrap">
     <h2 class="section-title">水巻相談支援事業所・心の健康教室 ご紹介動画</h2>
     <p class="section-sub">福岡県遠賀郡水巻町、遠賀川のほとりにある事業所です。1階の水巻相談支援事業所と、2階で準備を進める「心の健康教室」。事務所の様子を動画でご紹介します。</p>
-    <video controls preload="metadata" poster="videos/jigyosho-shokai-poster.jpg" width="960" height="540" style="width:100%;max-width:960px;height:auto;border-radius:10px;display:block;margin:0 auto;background:#000;">
-      <source src="videos/jigyosho-shokai.mp4" type="video/mp4">
-      お使いのブラウザは動画再生に対応していません。
-    </video>
+    <div class="yt-embed">
+      <iframe src="https://www.youtube.com/embed/KhVzHHij6gA" title="水巻相談支援事業所・心の健康教室 ご紹介動画" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+    </div>
     <p class="section-sub" style="margin-top:14px;">
       <a href="kokoro-kyoshitsu.html">心の健康教室について詳しく見る ›</a>
     </p>
