@@ -65,6 +65,11 @@
   .back-contact h2 { margin: 0 0 10px; color: var(--green-dark); font-size: 1.1rem; }
   .back-contact p { margin: 0 0 14px; font-size: 0.9rem; color: var(--text-sub); }
   .back-contact .big-tel { font-size: 1.7rem; font-weight: bold; color: var(--green-dark); text-decoration: none; }
+  .insta-box { display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap; margin: 22px auto 0; padding: 18px 22px; max-width: 640px; background: #fff; border: 1px solid #e6ede4; border-radius: 12px; text-align: left; }
+  .insta-box img { width: 140px; height: 140px; display: block; flex: 0 0 140px; }
+  .insta-box .insta-text { flex: 1 1 260px; font-size: 0.9rem; color: var(--text-sub); }
+  .insta-box .insta-text b { display: block; color: var(--green-dark); font-size: 1rem; margin-bottom: 4px; }
+  .insta-box .insta-btn { display: inline-block; margin-top: 8px; background: var(--pink); color: #fff; text-decoration: none; padding: 7px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
   .back-contact .home-btn { display: inline-block; margin-top: 14px; background: var(--green-dark); color: #fff; text-decoration: none; padding: 10px 26px; border-radius: 24px; font-size: 0.9rem; }
   footer { background: var(--green-dark); color: #fff; text-align: center; padding: 22px 0; font-size: 0.8rem; }
   footer a { color: #fff; }
