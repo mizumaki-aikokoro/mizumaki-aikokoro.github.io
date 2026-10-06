@@ -28,18 +28,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #101726; --bg2: #18233a; --ink: #eef1f8; --sub: #a9b3c9; --line: rgba(255,255,255,.14);
-    --card: rgba(255,255,255,.06); --accent: #ffc58a; --accent2: #8fd1b0; --glow: rgba(255,197,138,.35);
+    --bg: #eef6fb; --bg2: #fff4e8; --ink: #34424e; --sub: #6a7884; --line: rgba(60,90,110,.17);
+    --card: rgba(255,255,255,.78); --accent: #e7896c; --accent2: #4a7a3e; --glow: rgba(255,186,140,.42);
     --mincho: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
     --maru: "Zen Maru Gothic", "BIZ UDPGothic", "Yu Gothic", Meiryo, sans-serif;
   }
   html[data-mode="rain"] {
-    --bg: #1b2028; --bg2: #262c36; --ink: #d5dae3; --sub: #8d96a6; --line: rgba(255,255,255,.1);
-    --card: rgba(255,255,255,.04); --accent: #9aa7bd; --accent2: #7f8ea8; --glow: rgba(154,167,189,.2);
+    --bg: #d3d9e0; --bg2: #b9c2cc; --ink: #3b444e; --sub: #5d6773; --line: rgba(50,60,75,.2);
+    --card: rgba(255,255,255,.42); --accent: #7b88a0; --accent2: #6d7b92; --glow: rgba(90,105,130,.22);
   }
   html[data-mode="light"] {
-    --bg: #fff6e9; --bg2: #ffe9d2; --ink: #3b2f27; --sub: #7a6a5d; --line: rgba(90,60,30,.16);
-    --card: rgba(255,255,255,.72); --accent: #e8755f; --accent2: #4a7a3e; --glow: rgba(255,170,110,.45);
+    --bg: #fff3d9; --bg2: #ffd8b4; --ink: #3b2f27; --sub: #7a6a5d; --line: rgba(90,60,30,.16);
+    --card: rgba(255,255,255,.74); --accent: #e8755f; --accent2: #4a7a3e; --glow: rgba(255,160,90,.5);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -72,7 +72,7 @@
   @keyframes rise { to { opacity: 1; transform: none; } }
   .ask { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 18px; }
   .ask button, .pill { font-family: var(--maru); font-size: 1.05rem; font-weight: 700; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 40px; padding: 13px 30px; cursor: pointer; transition: transform .25s, background .4s, box-shadow .4s, color 1.2s; }
-  .ask button:hover, .ask button.on { transform: translateY(-3px); background: var(--accent); color: #2a1c12; box-shadow: 0 10px 34px var(--glow); }
+  .ask button:hover, .ask button.on { transform: translateY(-3px); background: var(--accent); color: #fff; box-shadow: 0 10px 34px var(--glow); }
   .answer { min-height: 5.6em; max-width: 620px; font-size: 1.06rem; opacity: 0; transition: opacity .7s; }
   .answer.show { opacity: 1; }
   .answer b { color: var(--accent); }
@@ -95,7 +95,7 @@
   /* switch */
   .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 34px 0 22px; }
   .tabs .pill { padding: 9px 22px; font-size: .95rem; }
-  .tabs .pill.on { background: var(--accent); color: #2a1c12; }
+  .tabs .pill.on { background: var(--accent); color: #fff; }
   .stage { display: grid; grid-template-columns: 1.1fr .9fr; gap: 26px; align-items: stretch; }
   .panel { border: 1px solid var(--line); border-radius: 26px; background: var(--card); padding: 34px 30px; transition: background 1.2s; }
   .event { font-family: var(--mincho); font-size: clamp(1.25rem, 3vw, 1.7rem); margin: 0 0 22px; }
@@ -104,7 +104,7 @@
   .toggle .knob { position: absolute; top: 5px; bottom: 5px; left: 5px; width: calc(50% - 5px); border-radius: 50px; background: var(--accent); transition: transform .6s cubic-bezier(.6,.1,.2,1), background 1.2s; box-shadow: 0 8px 30px var(--glow); }
   html[data-mode="light"] .toggle .knob { transform: translateX(100%); }
   html[data-mode="night"] .toggle .knob { opacity: 0; }
-  html[data-mode="rain"] .toggle .t-a, html[data-mode="light"] .toggle .t-b { color: #2a1c12; }
+  html[data-mode="rain"] .toggle .t-a, html[data-mode="light"] .toggle .t-b { color: #fff; }
   .thought { font-size: 1.2rem; min-height: 4.2em; margin: 0; transition: opacity .5s; }
   .thought small { display: block; font-size: .8rem; color: var(--sub); letter-spacing: .2em; margin-bottom: 6px; }
   .mood { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
@@ -121,7 +121,7 @@
   /* senses */
   .senses { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 44px; }
   .sense { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 3 / 4.4; border: 1px solid var(--line); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px 14px; transition: transform .5s, box-shadow .5s; }
-  .sense::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,24,.05) 20%, rgba(10,14,24,.88) 100%); }
+  .sense::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,30,45,0) 30%, rgba(20,30,45,.72) 100%); }
   .sense:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(0,0,0,.35); }
   .sense > * { position: relative; color: #fff; }
   .sense .k { font-family: var(--mincho); font-size: 2rem; line-height: 1.1; }
@@ -151,7 +151,7 @@
   footer { text-align: center; font-size: .78rem; color: var(--sub); padding: 40px 20px 60px; border-top: 1px solid var(--line); transition: color 1.2s; }
 
   /* modal */
-  .modal { position: fixed; inset: 0; z-index: 50; background: rgba(6,9,16,.86); display: none; align-items: center; justify-content: center; padding: 20px; }
+  .modal { position: fixed; inset: 0; z-index: 50; background: rgba(40,50,62,.82); display: none; align-items: center; justify-content: center; padding: 20px; }
   .modal.open { display: flex; }
   .modal video { width: min(960px, 100%); border-radius: 16px; background: #000; }
   .modal .x { position: absolute; top: 18px; right: 22px; font-size: 2rem; color: #fff; background: none; border: 0; cursor: pointer; }
@@ -317,7 +317,7 @@
   let W, H, P = [];
   const N = innerWidth < 700 ? 70 : 150;
   function size() { const d = Math.min(devicePixelRatio || 1, 2); W = cv.width = innerWidth * d; H = cv.height = innerHeight * d; }
-  function seed() { P = Array.from({ length: N }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 2.2 + .6, s: Math.random() * .6 + .3, p: Math.random() * 6.28 })); }
+  function seed() { P = Array.from({ length: N }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 2.2 + .6, s: Math.random() * .6 + .3, p: Math.random() * 6.28, k: Math.floor(Math.random() * 3) })); }
   size(); seed(); addEventListener('resize', () => { size(); seed(); });
   let t = 0;
   function draw() {
@@ -325,19 +325,20 @@
     cx.clearRect(0, 0, W, H);
     for (const q of P) {
       if (mode === 'rain') {
-        q.y += 14 * q.s + 6; q.x -= 1.6;
+        q.y += 9 * q.s + 4; q.x -= 1.1;
         if (q.y > H) { q.y = -20; q.x = Math.random() * W; }
-        cx.strokeStyle = 'rgba(170,185,210,.32)'; cx.lineWidth = q.r * .6;
+        cx.strokeStyle = 'rgba(88,104,128,.3)'; cx.lineWidth = q.r * .6;
         cx.beginPath(); cx.moveTo(q.x, q.y); cx.lineTo(q.x - 3, q.y + 22 * q.s + 8); cx.stroke();
       } else {
         const light = mode === 'light';
         q.y -= (light ? .9 : .25) * q.s; q.x += Math.sin(t + q.p) * (light ? .7 : .35);
         if (q.y < -10) { q.y = H + 10; q.x = Math.random() * W; }
-        const a = (.35 + .35 * Math.sin(t * 2 + q.p)) * (light ? .9 : .8);
+        const a = (.35 + .35 * Math.sin(t * 2 + q.p)) * (light ? .85 : .5);
         const R = q.r * (light ? 5.5 : 3);
         const g = cx.createRadialGradient(q.x, q.y, 0, q.x, q.y, R * 3);
-        g.addColorStop(0, light ? `rgba(255,170,90,${a})` : `rgba(255,214,160,${a})`);
-        g.addColorStop(1, 'rgba(255,200,140,0)');
+        const col = light ? '255,160,80' : ['255,176,130', '130,196,230', '150,205,150'][q.k];
+        g.addColorStop(0, `rgba(${col},${a})`);
+        g.addColorStop(1, `rgba(${col},0)`);
         cx.fillStyle = g; cx.beginPath(); cx.arc(q.x, q.y, R * 3, 0, 6.28); cx.fill();
       }
     }
