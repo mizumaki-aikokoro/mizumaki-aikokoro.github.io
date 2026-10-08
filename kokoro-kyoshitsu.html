@@ -220,7 +220,7 @@
     </div>
     <p class="answer" id="answer" aria-live="polite"></p>
     <a class="scroll-cue" href="#shikumi"><i></i>答えは、この先に</a>
-    <p style="margin:26px 0 0"><a class="pill" href="#quiz" style="text-decoration:none;display:inline-block">心のクイズをやってみる →</a></p>
+    <p style="margin:26px 0 0"><a class="pill" href="#taiken" style="text-decoration:none;display:inline-block">心の健康教室を体験してみる →</a></p>
   </div>
 </section>
 
@@ -271,11 +271,11 @@
 </section>
 
 <!-- QUIZ:START -->
-<section id="quiz">
+<section id="taiken">
   <div class="wrap">
-    <span class="eyebrow reveal">心のクイズ</span>
-    <h2 class="reveal">えらぶと、見えてくる。</h2>
-    <p class="lead reveal">正解・不正解を決めるクイズではありません。えらんでみると、自分の心のうごきに気づけます。気になるものから、どうぞ。</p>
+    <span class="eyebrow reveal">心の健康教室体験</span>
+    <h2 class="reveal">教室を、少しだけ体験。</h2>
+    <p class="lead reveal">心の健康教室で行っている内容を、ここで少しだけ体験できます。正解・不正解はありません。えらんでみると、自分の心のうごきに気づけます。気になるものから、どうぞ。</p>
     <div class="qz-tabs reveal" id="qzTabs"></div>
     <div class="qz reveal" id="qzBox" aria-live="polite"></div>
   </div>
@@ -443,7 +443,7 @@
   function qzNav(more) {
     const last = qzI === QZ.length - 1;
     return '<div class="qz-nav">' + (more || '') + '<button data-act="again">もういちど</button>' +
-      (last ? '' : '<button class="go" data-act="other">次のクイズへ</button>') + '</div>';
+      (last ? '' : '<button class="go" data-act="other">次の体験へ</button>') + '</div>';
   }
   function qzRender() {
     const z = QZ[qzI];
@@ -472,7 +472,7 @@
       qzBox.querySelectorAll('.qz-opts button').forEach((x, i) => { x.disabled = true; if (i === pick) x.classList.add('pick'); if (i === q.a) x.classList.add('key'); });
       const head = z.soft ? (hit ? '多くの人が、こちらで気分が上がります。' : 'そう感じる方もいます。感じ方は、人それぞれです。')
                           : (hit ? '教室でも、そう考えます。' : 'そう感じる方もいます。教室では、こう考えます。');
-      const more = qzN < z.qs.length - 1 ? '<button class="go" data-act="next">次の問題へ</button>' : '';
+      const more = qzN < z.qs.length - 1 ? '<button class="go" data-act="next">次へ</button>' : '';
       fb.innerHTML = '<div class="qz-fb"><b>' + head + '</b>' + esc(q.ex) + '</div>' + (more ? '<div class="qz-nav">' + more + '</div>' : qzNav());
     } else if (b.dataset.c !== undefined) {
       const seq = qzBox._seq; seq.push(+b.dataset.c); b.classList.add('used'); b.disabled = true;
