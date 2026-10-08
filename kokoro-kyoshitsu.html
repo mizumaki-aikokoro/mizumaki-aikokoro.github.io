@@ -118,6 +118,36 @@
   .mood .note { font-size: .86rem; color: var(--sub); margin-top: 8px; transition: color 1.2s; }
   .gentle { margin-top: 30px; text-align: center; color: var(--sub); font-size: .95rem; transition: color 1.2s; }
 
+  /* QUIZ:CSS */
+  .qz-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 34px 0 22px; }
+  .qz-tabs .pill { padding: 9px 20px; font-size: .95rem; }
+  .qz-tabs .pill.on { background: var(--accent); color: #fff; }
+  .qz { border: 1px solid var(--line); border-radius: 26px; background: var(--card); padding: 34px 30px; max-width: 760px; transition: background 1.2s; }
+  .qz-lead { color: var(--sub); font-size: .95rem; margin: 0 0 18px; }
+  .qz-count { font-size: .8rem; letter-spacing: .2em; color: var(--accent); }
+  .qz-q { font-family: var(--mincho); font-size: clamp(1.2rem, 3.2vw, 1.6rem); line-height: 1.6; margin: 6px 0 22px; }
+  .qz-opts { display: grid; gap: 12px; }
+  .qz-opts button, .qz-chip { font-family: var(--maru); font-size: 1.05rem; font-weight: 700; color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 18px; padding: 15px 18px; cursor: pointer; text-align: left; transition: transform .2s, border-color .3s, background .3s; }
+  .qz-opts button:hover:not(:disabled), .qz-chip:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--accent); }
+  .qz-opts button.pick { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, #fff); }
+  .qz-opts button.key { border-color: var(--accent2); background: color-mix(in srgb, var(--accent2) 13%, #fff); }
+  .qz-opts button:disabled, .qz-chip:disabled { cursor: default; opacity: .92; }
+  .qz-fb { margin-top: 22px; padding: 18px 20px; border-radius: 18px; background: color-mix(in srgb, var(--accent2) 10%, #fff); border: 1px solid var(--line); animation: qzin .5s ease; }
+  .qz-fb b { display: block; color: var(--accent2); margin-bottom: 4px; }
+  @keyframes qzin { from { opacity: 0; transform: translateY(10px); } }
+  .qz-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  .qz-nav button { font-family: var(--maru); font-weight: 700; font-size: .98rem; border-radius: 30px; padding: 11px 26px; cursor: pointer; border: 1px solid var(--line); background: #fff; color: var(--ink); }
+  .qz-nav button.go { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .qz-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .qz-chip { text-align: center; min-width: 92px; }
+  .qz-chip.used { visibility: hidden; }
+  .qz-slots { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 22px; min-height: 58px; }
+  .qz-slot { min-width: 84px; text-align: center; border: 2px dashed var(--line); border-radius: 16px; padding: 12px 10px; font-weight: 700; color: var(--sub); background: rgba(255,255,255,.5); }
+  .qz-slot.fill { border-style: solid; border-color: var(--accent); color: var(--ink); background: #fff; }
+  .qz-arrow { color: var(--accent); font-weight: 700; }
+  .qz-checks label { display: flex; gap: 12px; align-items: center; background: #fff; border: 2px solid var(--line); border-radius: 18px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; font-weight: 500; }
+  .qz-checks input { width: 22px; height: 22px; accent-color: var(--accent); flex: 0 0 22px; }
+  /* QUIZ:CSS-END */
   /* senses */
   .senses { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 44px; }
   .sense { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 3 / 4.4; border: 1px solid var(--line); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px 14px; transition: transform .5s, box-shadow .5s; }
@@ -190,6 +220,7 @@
     </div>
     <p class="answer" id="answer" aria-live="polite"></p>
     <a class="scroll-cue" href="#shikumi"><i></i>答えは、この先に</a>
+    <p style="margin:26px 0 0"><a class="pill" href="#quiz" style="text-decoration:none;display:inline-block">心のクイズをやってみる →</a></p>
   </div>
 </section>
 
@@ -239,6 +270,17 @@
   </div>
 </section>
 
+<!-- QUIZ:START -->
+<section id="quiz">
+  <div class="wrap">
+    <span class="eyebrow reveal">心のクイズ</span>
+    <h2 class="reveal">えらぶと、見えてくる。</h2>
+    <p class="lead reveal">正解・不正解を決めるクイズではありません。えらんでみると、自分の心のうごきに気づけます。気になるものから、どうぞ。</p>
+    <div class="qz-tabs reveal" id="qzTabs"></div>
+    <div class="qz reveal" id="qzBox" aria-live="polite"></div>
+  </div>
+</section>
+<!-- QUIZ:END -->
 <section id="gokan">
   <div class="wrap">
     <span class="eyebrow reveal">五感トレーニング</span>
@@ -392,6 +434,65 @@
     cur = +b.dataset.e; document.querySelectorAll('#tabs .pill').forEach(x => x.classList.toggle('on', x === b)); render();
   }));
 
+  // QUIZ:JS
+  const QZ = [{"id": "shikou", "tab": "どっちの思考？", "type": "choice", "lead": "同じ出来事でも、受け取り方で気分は変わります。この受け取り方は、どっち？", "qs": [{"q": "朝、雨が降っていた。|「また雨か、面倒だ」", "o": ["あたりまえ思考", "ありがとう思考"], "a": 0, "ex": "あたりまえ思考は、悪い気分につながりやすい受け取り方です。出てきても大丈夫。気づけたことが、最初の一歩です。"}, {"q": "朝、雨が降っていた。|「これで作物が育つ。傘があってよかった」", "o": ["あたりまえ思考", "ありがとう思考"], "a": 1, "ex": "同じ雨でも、ありがとう思考で受け取ると、良い気分が生まれます。"}, {"q": "早く食べなきゃ、こんな時間。|「一生懸命作ってくれたんだ。かみしめよう」", "o": ["あたりまえ思考", "ありがとう思考"], "a": 1, "ex": "目の前の料理に気持ちを向けると、急いでいた気分が落ち着いていきます。"}, {"q": "友人に、持っているのと同じものをもらった。|「いらない」", "o": ["あたりまえ思考", "ありがとう思考"], "a": 0, "ex": "ありがとう思考なら「もったいない。困っている人にあげよう」。同じ出来事でも、ちがう気分になります。"}]}, {"id": "kibun", "tab": "気分が上がるのは？", "type": "choice", "soft": true, "lead": "五感から入るものが、気分をつくります。あなたの気分が上がるのは、どっち？", "qs": [{"q": "【見る】|気分が上がるのは、どっち？", "o": ["朝焼けの空", "散らかった部屋"], "a": 0, "ex": "見るものは、ある程度は自分で選べます。気分が上がるものを、意識して目に入れてみましょう。"}, {"q": "【聞く】|気分が上がるのは、どっち？", "o": ["小鳥のさえずり", "黒板をひっかく音"], "a": 0, "ex": "聞く音も、ある程度は自分で選べます。好きな音を、意識して耳に入れてみましょう。"}, {"q": "【かぐ】|気分が上がるのは、どっち？", "o": ["カビのにおい", "焼きたてのパンの香り"], "a": 1, "ex": "においは、意識していなくても、呼吸のたびに入ってきます。好きな香りを、自分から取り入れてみましょう。"}]}, {"id": "nioi", "tab": "においのひみつ", "type": "choice", "lead": "五感には、気分をつくるほかにも、大切な役割があります。", "qs": [{"q": "いやなにおいを|避けたくなるのは、何のため？", "o": ["気分を下げるため", "危険から身を守るため", "特に意味はない"], "a": 1, "ex": "傷んだ食べ物や煙など、体に良くないものには特有のにおいがあることが多く、鼻はそれをいち早く察知して、危険から身を守ってくれています。"}, {"q": "強い苦みや、いつもと違う変な味を|舌が感じ取るのは、何のため？", "o": ["毒から身を守るため", "食事を楽しくするため", "特に意味はない"], "a": 0, "ex": "多くの毒や傷んだものには、独特の苦みがあります。舌はそれをいち早く察知して、身を守ってくれています。"}, {"q": "熱いものに触れたとき、|とっさに手を引くのは？", "o": ["考えてから動いている", "肌が危険を察知している"], "a": 1, "ex": "肌は、痛みや熱さをいち早く察知して、とっさに手を引かせ、危険から身を守ってくれています。"}]}, {"id": "nagare", "tab": "心の流れ", "type": "order", "lead": "心は、ひとつの場所ではなく、ひとつの「流れ」です。正しい順番にタップしてみましょう。", "items": ["情報", "五感", "脳", "判断", "気分"], "shuffle": [2, 4, 0, 3, 1], "ex": "情報 → 五感 → 脳（思考 ⇄ 知識） → 判断（記憶：本能・理性） → 気分。この流れ、ぜんぶが「心」です。"}, {"id": "atama", "tab": "あたまいっぱい度", "type": "check", "lead": "あてはまるものを、選んでみてください。（遊びのチェックです。診断ではありません）", "items": ["一度に、たくさんのことを考えてしまう", "スマホやテレビを、つけっぱなしにしがち", "「もう考えたくない」と感じることがある", "寝る前も、頭の中がにぎやか", "「急がなきゃ」と、よく思う"], "results": [{"min": 0, "head": "今は、頭の中にゆとりがありそうです。", "ex": "そのゆとりを大切に。気分が上がるものを、ひとつ選んでみましょう。"}, {"min": 1, "head": "少し、情報が多めかもしれません。", "ex": "あたまいっぱいというのは、五感からたくさんの情報を脳に入れる癖がある、ということ。ひとつずつ、ゆっくりで大丈夫です。"}, {"min": 3, "head": "あたまが、いっぱいのサインかもしれません。", "ex": "掃除機のように限界が来る前に。キーワードは「考えすぎないこと」と「ゆっくり整理すること」。そうしないと、疲れるからね。"}]}, {"id": "honnou", "tab": "本能？ 理性？", "type": "choice", "lead": "判断のよりどころになるのは、本能と理性という記憶です。", "qs": [{"q": "車がこちらに向かってきた。|とっさに、よけた。これは？", "o": ["本能", "理性"], "a": 0, "ex": "本能は、気分より先にからだを動かして、命を守ります。「怖かった」と感じるのは、そのあとです。"}, {"q": "ひかれそうなわが子を、|とっさにかばった。これは？", "o": ["本能", "理性"], "a": 1, "ex": "自分を守ろうとする本能を、理性が上回った行動です。大切な相手だからこそ、起こせる行動です。"}]}];
+  const qzBox = document.getElementById('qzBox'), qzTabs = document.getElementById('qzTabs');
+  let qzI = 0, qzN = 0;
+  const esc = s => s.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]));
+  const qtext = s => s.split('|').map(esc).join('<br>');
+  function qzNav(more) {
+    const last = qzI === QZ.length - 1;
+    return '<div class="qz-nav">' + (more || '') + '<button data-act="again">もういちど</button>' +
+      (last ? '' : '<button class="go" data-act="other">次のクイズへ</button>') + '</div>';
+  }
+  function qzRender() {
+    const z = QZ[qzI];
+    [...qzTabs.children].forEach((b, i) => b.classList.toggle('on', i === qzI));
+    let h = '<p class="qz-lead">' + esc(z.lead) + '</p>';
+    if (z.type === 'choice') {
+      const q = z.qs[qzN];
+      h += '<span class="qz-count">' + (qzN + 1) + ' / ' + z.qs.length + '</span><p class="qz-q">' + qtext(q.q) + '</p><div class="qz-opts">' +
+        q.o.map((o, i) => '<button data-o="' + i + '">' + esc(o) + '</button>').join('') + '</div><div id="qzFb"></div>';
+    } else if (z.type === 'order') {
+      h += '<div class="qz-slots" id="qzSlots">' + z.items.map((_, i) => (i ? '<span class="qz-arrow">→</span>' : '') + '<span class="qz-slot">？</span>').join('') + '</div>' +
+        '<div class="qz-chips">' + z.shuffle.map(i => '<button class="qz-chip" data-c="' + i + '">' + esc(z.items[i]) + '</button>').join('') + '</div><div id="qzFb"></div>';
+    } else {
+      h += '<div class="qz-checks">' + z.items.map((t, i) => '<label><input type="checkbox" value="' + i + '">' + esc(t) + '</label>').join('') + '</div>' +
+        '<div class="qz-nav"><button class="go" data-act="result">結果を見る</button></div><div id="qzFb"></div>';
+    }
+    qzBox.innerHTML = h;
+    qzBox._seq = [];
+  }
+  qzBox.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    const z = QZ[qzI], fb = document.getElementById('qzFb');
+    if (b.dataset.o !== undefined) {
+      const q = z.qs[qzN], pick = +b.dataset.o, hit = pick === q.a;
+      qzBox.querySelectorAll('.qz-opts button').forEach((x, i) => { x.disabled = true; if (i === pick) x.classList.add('pick'); if (i === q.a) x.classList.add('key'); });
+      const head = z.soft ? (hit ? '多くの人が、こちらで気分が上がります。' : 'そう感じる方もいます。感じ方は、人それぞれです。')
+                          : (hit ? '教室でも、そう考えます。' : 'そう感じる方もいます。教室では、こう考えます。');
+      const more = qzN < z.qs.length - 1 ? '<button class="go" data-act="next">次の問題へ</button>' : '';
+      fb.innerHTML = '<div class="qz-fb"><b>' + head + '</b>' + esc(q.ex) + '</div>' + (more ? '<div class="qz-nav">' + more + '</div>' : qzNav());
+    } else if (b.dataset.c !== undefined) {
+      const seq = qzBox._seq; seq.push(+b.dataset.c); b.classList.add('used'); b.disabled = true;
+      const slots = qzBox.querySelectorAll('.qz-slot');
+      slots[seq.length - 1].textContent = z.items[b.dataset.c]; slots[seq.length - 1].classList.add('fill');
+      if (seq.length === z.items.length) {
+        const ok = seq.every((v, i) => v === i);
+        fb.innerHTML = '<div class="qz-fb"><b>' + (ok ? 'その順番です。' : '教室では、この順番で考えます。') + '</b>' + esc(z.ex) + '</div>' + qzNav();
+      }
+    } else if (b.dataset.act === 'result') {
+      const n = qzBox.querySelectorAll('input:checked').length;
+      const r = [...z.results].reverse().find(x => n >= x.min);
+      fb.innerHTML = '<div class="qz-fb"><b>' + esc(r.head) + '</b>' + esc(r.ex) + '</div>' + qzNav();
+    } else if (b.dataset.act === 'next') { qzN++; qzRender(); }
+    else if (b.dataset.act === 'again') { qzN = 0; qzRender(); }
+    else if (b.dataset.act === 'other') { qzI++; qzN = 0; qzRender(); qzBox.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  });
+  QZ.forEach((z, i) => { const b = document.createElement('button'); b.className = 'pill'; b.textContent = z.tab; b.addEventListener('click', () => { qzI = i; qzN = 0; qzRender(); }); qzTabs.appendChild(b); });
+  qzRender();
+  // QUIZ:JS-END
   // ---- 動画 ----
   const modal = $('modal'), player = $('player');
   function close() { player.pause(); player.removeAttribute('src'); player.load(); modal.classList.remove('open'); }
