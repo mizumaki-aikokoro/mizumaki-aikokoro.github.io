@@ -148,6 +148,31 @@
   .qz-checks label { display: flex; gap: 12px; align-items: center; background: #fff; border: 2px solid var(--line); border-radius: 18px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; font-weight: 500; }
   .qz-checks input { width: 22px; height: 22px; accent-color: var(--accent); flex: 0 0 22px; }
   /* QUIZ:CSS-END */
+  /* PSY:CSS */
+  .psy-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0 14px; }
+  .psy-tabs .pill { padding: 9px 20px; font-size: .95rem; }
+  .psy-tabs .pill.on { background: var(--accent); color: #fff; }
+  .psy-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .82rem; color: var(--sub); margin: 0 0 22px; }
+  .psy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; align-items: start; }
+  .psy { border: 1px solid var(--line); border-radius: 22px; background: var(--card); transition: background 1.2s, box-shadow .4s; }
+  .psy[open] { box-shadow: 0 10px 34px var(--glow); }
+  .psy summary { list-style: none; cursor: pointer; padding: 18px 20px; display: grid; gap: 4px; }
+  .psy summary::-webkit-details-marker { display: none; }
+  .psy .no { font-size: .78rem; letter-spacing: .15em; color: var(--accent); }
+  .psy .tt { font-family: var(--maru); font-weight: 700; font-size: 1.08rem; line-height: 1.5; }
+  .psy .hk { color: var(--sub); font-size: .9rem; }
+  .psy .more { font-size: .8rem; color: var(--accent); margin-top: 4px; }
+  .psy[open] .more { display: none; }
+  .psy .in { padding: 0 20px 20px; font-size: .95rem; line-height: 1.8; animation: qzin .5s ease; }
+  .psy .try { margin-top: 10px; padding: 12px 14px; border-radius: 14px; background: color-mix(in srgb, var(--accent2) 10%, #fff); }
+  .psy .try b { color: var(--accent2); display: block; font-size: .85rem; }
+  .psy .src { margin-top: 8px; font-size: .76rem; color: var(--sub); }
+  .mk { display: inline-block; font-size: .72rem; font-weight: 700; border-radius: 20px; padding: 2px 10px; justify-self: start; }
+  .mk.m1 { background: color-mix(in srgb, var(--accent2) 16%, #fff); color: var(--accent2); }
+  .mk.m2 { background: color-mix(in srgb, var(--accent) 16%, #fff); color: #b8573c; }
+  .mk.m3 { background: #eceff3; color: #5d6773; }
+  .psy-note { margin-top: 22px; font-size: .82rem; color: var(--sub); }
+  /* PSY:CSS-END */
   /* senses */
   .senses { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 44px; }
   .sense { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 3 / 4.4; border: 1px solid var(--line); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px 14px; transition: transform .5s, box-shadow .5s; }
@@ -281,6 +306,40 @@
   </div>
 </section>
 <!-- QUIZ:END -->
+<!-- PSY:START -->
+<section id="mame">
+  <div class="wrap">
+    <span class="eyebrow reveal">心のミニ知識</span>
+    <h2 class="reveal">心理学の、ちょっといい話。</h2>
+    <p class="lead reveal">人との距離、五感と気分、考え方のくせ。心理学で知られている話を20個、集めました。気になるカードを押すと、くわしく読めます。</p>
+    <div class="psy-tabs reveal" id="psyTabs"><button class="pill on" data-c="all">すべて</button><button class="pill" data-c="kyori">人との距離</button><button class="pill" data-c="gokan">五感と気分</button><button class="pill" data-c="kuse">考え方のくせ</button></div>
+    <div class="psy-legend">研究の確かさ：<span><span class="mk m1">よく確かめられている</span></span><span><span class="mk m2">条件しだい</span></span><span><span class="mk m3">じつは…</span></span></div>
+    <div class="psy-grid" id="psyGrid">
+      <details class="psy" data-c="kyori"><summary><span class="no">No.01</span><span class="tt">手を差し出すと、心の距離がわかる？</span><span class="hk">よく聞く話ですが、じつは…</span><span class="mk m3">じつは…</span><span class="more">くわしく読む ＋</span></summary><div class="in">急に手を差し出して、相手が握り返すかどうかで心の距離がわかる、という話があります。ただ、心理学の研究としての裏付けは見つかっていません。<div class="try"><b>やってみよう</b>遊びとしてやるなら、おたがいに「どう感じたか」を話してみましょう。答えより、感じ方のちがいに気づけます。</div><div class="src">出典：研究による裏付けなし</div></div></details>
+      <details class="psy" data-c="kyori"><summary><span class="no">No.02</span><span class="tt">パーソナルスペース</span><span class="hk">人には「見えない距離」がある</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">親しい人なら約45cm以内、知り合いなら約1.2m以内…と、相手との関係によって、近づいてよい距離が変わります。それより近いと、落ち着かなくなります。<div class="try"><b>やってみよう</b>2人で向かい合い、ゆっくり近づいて、相手に「ここで止まって」と言ってもらいましょう。</div><div class="src">出典：E.T.ホール（1966）</div></div></details>
+      <details class="psy" data-c="kyori"><summary><span class="no">No.03</span><span class="tt">ミラーリング</span><span class="hk">しぐさが似ると、心が近づく</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">相手のしぐさや話す速さに、さりげなく合わせると、好感を持たれやすくなります。わざとらしくまねると、逆効果です。<div class="try"><b>やってみよう</b>相手が飲み物を飲んだら、少し間をおいて、自分もひと口。</div><div class="src">出典：シャートランドとバージ（1999）</div></div></details>
+      <details class="psy" data-c="kyori"><summary><span class="no">No.04</span><span class="tt">返報性（へんぽうせい）</span><span class="hk">もらうと、返したくなる</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">親切にされると、人はお返しをしたくなります。笑顔や「ありがとう」も、返ってきやすいものです。<div class="try"><b>やってみよう</b>今日、自分から先に「ありがとう」を言ってみましょう。</div><div class="src">出典：リーガン（1971）</div></div></details>
+      <details class="psy" data-c="kyori"><summary><span class="no">No.05</span><span class="tt">単純接触効果</span><span class="hk">会うたびに、好きになる</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">何度も見たり会ったりするだけで、好感が増えやすくなります。長さより、回数が大切です。<div class="try"><b>やってみよう</b>長い話より、短いあいさつを毎日。</div><div class="src">出典：ザイオンス（1968）</div></div></details>
+      <details class="psy" data-c="kyori"><summary><span class="no">No.06</span><span class="tt">名前を呼ぶ</span><span class="hk">名前は、特別な言葉</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">自分の名前を聞くと、脳はほかの言葉とはちがう反応をします。名前を呼ばれると、「自分を見てくれている」と感じます。<div class="try"><b>やってみよう</b>あいさつの前に、相手の名前をつけてみましょう。「〇〇さん、おはようございます」。</div><div class="src">出典：カーモディとルイス（2006）</div></div></details>
+      <details class="psy" data-c="kyori"><summary><span class="no">No.07</span><span class="tt">36の質問</span><span class="hk">質問で、距離が縮まる</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">少しずつ深い質問をしあい、おたがいに自分のことを話すと、初対面どうしでも、短い時間で親しみが生まれました。<div class="try"><b>やってみよう</b>「最近、うれしかったことは？」から始めてみましょう。</div><div class="src">出典：アーロンほか（1997）</div></div></details>
+      <details class="psy" data-c="kyori"><summary><span class="no">No.08</span><span class="tt">そっと触れる</span><span class="hk">触れることで、伝わるもの</span><span class="mk m2">条件しだい</span><span class="more">くわしく読む ＋</span></summary><div class="in">店員が客の腕や肩に軽く触れると、チップが増えたという研究があります。ただし、触れられるのが苦手な人もいます。<div class="try"><b>やってみよう</b>触れる前に、「パーソナルスペース」を思い出して。相手が心地よい距離が一番です。</div><div class="src">出典：クラスコとウェッツェル（1984）</div></div></details>
+      <details class="psy" data-c="kyori"><summary><span class="no">No.09</span><span class="tt">完璧すぎない人</span><span class="hk">ちょっとの失敗で、好かれる</span><span class="mk m2">条件しだい</span><span class="more">くわしく読む ＋</span></summary><div class="in">よくできる人がちょっと失敗すると、かえって親しみがわくことがあります。ただし、もともと信頼されていることが条件です。<div class="try"><b>やってみよう</b>失敗した自分を、笑って許してみましょう。</div><div class="src">出典：アロンソンほか（1966）</div></div></details>
+      <details class="psy" data-c="kyori"><summary><span class="no">No.10</span><span class="tt">吊り橋効果</span><span class="hk">ドキドキの、取り違え</span><span class="mk m2">条件しだい</span><span class="more">くわしく読む ＋</span></summary><div class="in">揺れる吊り橋の上で出会った相手に、好意を感じやすいという実験があります。こわさのドキドキを、恋のドキドキと取り違えるのです。<div class="try"><b>やってみよう</b>気分の理由を、「本当にそれかな？」と見直してみましょう。</div><div class="src">出典：ダットンとアロン（1974）</div></div></details>
+      <details class="psy" data-c="gokan"><summary><span class="no">No.11</span><span class="tt">カクテルパーティー効果</span><span class="hk">うるさくても、聞こえる言葉</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">にぎやかな場所でも、自分の名前や好きな話題は聞き取れます。耳は、聞きたいものを選んでいるのです。<div class="try"><b>やってみよう</b>目を閉じて、今いくつの音が聞こえるか、数えてみましょう。</div><div class="src">出典：チェリー（1953）</div></div></details>
+      <details class="psy" data-c="gokan"><summary><span class="no">No.12</span><span class="tt">温かい飲み物と、温かい人</span><span class="hk">温かいと、人も温かく見える？</span><span class="mk m3">じつは…</span><span class="more">くわしく読む ＋</span></summary><div class="in">温かいカップを持つと、相手を温かい人だと感じる、という研究がありました。けれど、人数を増やして確かめ直すと、その結果は出ませんでした。<div class="try"><b>やってみよう</b>有名な話でも、「本当かな？」と考えてみることも大切です。</div><div class="src">出典：ウィリアムズとバージ（2008）／確かめ直し：チャブリスほか（2019）</div></div></details>
+      <details class="psy" data-c="gokan"><summary><span class="no">No.13</span><span class="tt">笑顔の形をつくる</span><span class="hk">笑顔の形で、気分は変わる？</span><span class="mk m2">条件しだい</span><span class="more">くわしく読む ＋</span></summary><div class="in">ペンを口にくわえて笑顔の形にすると、漫画が少し面白く感じた、という実験があります。確かめ直しでは、効果が出なかった研究と、小さく出た研究があります。<div class="try"><b>やってみよう</b>鏡の前で口角を上げて、気分がどう変わるか、感じてみましょう。</div><div class="src">出典：シュトラックほか（1988）</div></div></details>
+      <details class="psy" data-c="kuse"><summary><span class="no">No.14</span><span class="tt">白くまの実験</span><span class="hk">「考えないで」と言われると…</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">「白くまのことを考えないで」と言われると、かえって白くまが頭に浮かびます。考えを押さえこむほど、浮かびやすくなるのです。<div class="try"><b>やってみよう</b>浮かんだ考えは、追い出さずに「浮かんだね」と見送ってみましょう。</div><div class="src">出典：ウェグナーほか（1987）</div></div></details>
+      <details class="psy" data-c="kuse"><summary><span class="no">No.15</span><span class="tt">やりかけは、頭に残る</span><span class="hk">終わっていないことが、気になるわけ</span><span class="mk m2">条件しだい</span><span class="more">くわしく読む ＋</span></summary><div class="in">途中で止めたことは、終わったことより気になって、頭に残りやすいと言われます。確かめ直しの結果は、まちまちです。<div class="try"><b>やってみよう</b>気になることは紙に書き出して、頭の外に置いてみましょう。</div><div class="src">出典：ツァイガルニク（1927）</div></div></details>
+      <details class="psy" data-c="kuse"><summary><span class="no">No.16</span><span class="tt">スポットライト効果</span><span class="hk">思うほど、見られていない</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">目立つTシャツを着た学生は「半分くらいの人が気づいた」と思いましたが、実際に気づいたのは約4分の1でした。<div class="try"><b>やってみよう</b>失敗して恥ずかしいとき、「みんな、そんなに見ていない」と思い出しましょう。</div><div class="src">出典：ギロビッチほか（2000）</div></div></details>
+      <details class="psy" data-c="kuse"><summary><span class="no">No.17</span><span class="tt">第一印象</span><span class="hk">最初の言葉が、印象を決める</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">同じ人の説明でも、良いところから聞くか、悪いところから聞くかで、印象が変わります。<div class="try"><b>やってみよう</b>人を紹介するときは、良いところから話してみましょう。</div><div class="src">出典：アッシュ（1946）</div></div></details>
+      <details class="psy" data-c="kuse"><summary><span class="no">No.18</span><span class="tt">ハロー効果</span><span class="hk">ひとつ良いと、ぜんぶ良く見える</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">見た目や肩書きなど、ひとつ目立つ良いところがあると、ほかのところまで良く見えてしまいます。悪いところでも、同じことが起きます。<div class="try"><b>やってみよう</b>人を見るとき、「ひとつのことだけで決めていないかな？」と考えてみましょう。</div><div class="src">出典：ソーンダイク（1920）</div></div></details>
+      <details class="psy" data-c="kuse"><summary><span class="no">No.19</span><span class="tt">占いが当たる気がするわけ</span><span class="hk">誰にでも当てはまる言葉</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">「人に好かれたいけれど、自分に厳しいところもある」のような、誰にでも当てはまる言葉を、自分のことだと感じてしまいます。<div class="try"><b>やってみよう</b>当たっていると思ったら、「ほかの人にも当てはまるかな？」と考えてみましょう。</div><div class="src">出典：フォア（1949）</div></div></details>
+      <details class="psy" data-c="kuse"><summary><span class="no">No.20</span><span class="tt">「〜なので」の力</span><span class="hk">理由があると、お願いが通る</span><span class="mk m1">よく確かめられている</span><span class="more">くわしく読む ＋</span></summary><div class="in">コピー機の順番をゆずってもらう実験で、「コピーをとりたいので」という中身のない理由でも、理由がないときより、ゆずってもらえることが増えました。<div class="try"><b>やってみよう</b>お願いするときは、短くても理由をそえてみましょう。</div><div class="src">出典：ランガーほか（1978）</div></div></details>
+    </div>
+    <p class="psy-note">※ 研究の結果は、すべての人に当てはまるわけではありません。「じつは…」は、よく聞くけれど、確かめ直すと結果が出なかった話や、研究の裏付けがない話です。</p>
+  </div>
+</section>
+<!-- PSY:END -->
 <section id="gokan">
   <div class="wrap">
     <span class="eyebrow reveal">五感トレーニング</span>
@@ -493,6 +552,12 @@
   QZ.forEach((z, i) => { const b = document.createElement('button'); b.className = 'pill'; b.textContent = z.tab; b.addEventListener('click', () => { qzI = i; qzN = 0; qzRender(); }); qzTabs.appendChild(b); });
   qzRender();
   // QUIZ:JS-END
+  // PSY:JS
+  document.querySelectorAll('#psyTabs .pill').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#psyTabs .pill').forEach(x => x.classList.toggle('on', x === b));
+    document.querySelectorAll('#psyGrid .psy').forEach(d => { d.hidden = !(b.dataset.c === 'all' || d.dataset.c === b.dataset.c); });
+  }));
+  // PSY:JS-END
   // ---- 動画 ----
   const modal = $('modal'), player = $('player');
   function close() { player.pause(); player.removeAttribute('src'); player.load(); modal.classList.remove('open'); }
