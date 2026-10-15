@@ -179,6 +179,41 @@
   .mk.m3 { background: #eceff3; color: #5d6773; }
   .psy-note { margin-top: 22px; font-size: .82rem; color: var(--sub); }
   /* PSY:CSS-END */
+  /* TSUYOKU:CSS */
+  .ty-map { margin: 34px 0 10px; border: 1px solid var(--line); border-radius: 26px; background: var(--card); padding: 26px 18px 22px; transition: background 1.2s; }
+  .ty-flow { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 6px; }
+  .ty-st { text-align: center; min-width: 74px; }
+  .ty-st .b { display: inline-block; border: 1px solid var(--line); border-radius: 16px; padding: 8px 12px; font-weight: 700; background: #fff; }
+  .ty-st.k .b { border: 2px solid var(--accent); }
+  .ty-st .tag { display: block; margin-top: 8px; font-size: .8rem; font-weight: 700; color: #fff; background: var(--accent); border-radius: 20px; padding: 3px 10px; }
+  .ty-st .tag.no { background: transparent; color: var(--sub); font-weight: 500; }
+  .ty-ar { color: var(--accent); font-weight: 700; padding-top: 9px; }
+  .ty-map p { text-align: center; color: var(--sub); font-size: .92rem; margin: 18px 0 0; }
+  .ty-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 26px; }
+  .ty-card { border: 1px solid var(--line); border-radius: 26px; background: var(--card); padding: 26px 24px; transition: background 1.2s; }
+  .ty-card .n { font-family: var(--mincho); font-size: 2.6rem; line-height: 1; color: var(--accent); }
+  .ty-card h3 { margin: 6px 0 2px; font-size: 1.3rem; }
+  .ty-card .grow { font-size: .85rem; color: var(--accent2); font-weight: 700; }
+  .ty-card dl { margin: 14px 0 0; }
+  .ty-card dt { font-size: .8rem; color: var(--sub); margin-top: 10px; }
+  .ty-card dd { margin: 2px 0 0; }
+  .ty-box { margin-top: 26px; border-radius: 26px; padding: 26px 24px; background: color-mix(in srgb, var(--accent) 9%, #fff); border: 1px solid var(--line); }
+  .ty-box h3 { margin: 0 0 10px; font-size: 1.2rem; }
+  .ty-tbl { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: .95rem; }
+  .ty-tbl th, .ty-tbl td { text-align: left; padding: 9px 8px; border-bottom: 1px dashed var(--line); vertical-align: top; }
+  .ty-tbl th { white-space: nowrap; color: var(--accent); }
+  .ty-tbl tr.ok th, .ty-tbl tr.ok td { color: var(--accent2); font-weight: 700; border-bottom: 0; }
+  .ty-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
+  .ty-two .ty-box { margin-top: 0; background: var(--card); }
+  .ty-quote { margin: 30px auto 0; text-align: center; font-family: var(--mincho); font-size: clamp(1.2rem, 3.2vw, 1.7rem); line-height: 1.7; }
+  .ty-quote em { font-style: normal; color: var(--accent); }
+  @media (max-width: 600px) {
+    .ty-flow { flex-direction: column; align-items: center; gap: 2px; }
+    .ty-ar { transform: rotate(90deg); padding: 0; }
+    .ty-st { display: flex; align-items: center; gap: 10px; }
+    .ty-st .tag { margin-top: 0; }
+  }
+  /* TSUYOKU:CSS-END */
   /* senses */
   .senses { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 44px; }
   .sense { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 3 / 4.4; border: 1px solid var(--line); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px 14px; transition: transform .5s, box-shadow .5s; }
@@ -271,6 +306,60 @@
   </div>
 </section>
 
+<!-- TSUYOKU:START -->
+<section id="tsuyoku">
+  <div class="wrap">
+    <span class="eyebrow reveal">心を強くする3つ</span>
+    <h2 class="reveal">学習・技術・経験。</h2>
+    <p class="lead reveal">教室では、心を強くするのは「経験」と「技術」と「学習」だと考えています。この3つは、上の「心の流れ」の、自分で育てられる3か所に、ぴったり重なっています。</p>
+
+    <div class="ty-map reveal">
+      <div class="ty-flow">
+        <div class="ty-st"><span class="b">情報</span><span class="tag no">止められない</span></div><span class="ty-ar">→</span>
+        <div class="ty-st"><span class="b">五感</span></div><span class="ty-ar">→</span>
+        <div class="ty-st k"><span class="b">思考</span><span class="tag">技術</span></div><span class="ty-ar">⇄</span>
+        <div class="ty-st k"><span class="b">知識</span><span class="tag">学習</span></div><span class="ty-ar">→</span>
+        <div class="ty-st k"><span class="b">判断（記憶）</span><span class="tag">経験</span></div><span class="ty-ar">→</span>
+        <div class="ty-st"><span class="b">気分</span></div>
+      </div>
+      <p>雨も、人のことばも、情報は勝手に入ってきます。でも、その先の「思考・知識・記憶」は、自分で育てられます。</p>
+    </div>
+
+    <p class="lead reveal" style="margin-top:34px">心を強くすることは、泳げるようになることに似ています。波（情報）は止められません。強い心とは、<b>波を止める心ではなく、波の上で浮いていられる心</b>です。</p>
+    <div class="ty-cards">
+      <div class="ty-card reveal"><span class="n">1</span><h3>学習</h3><span class="grow">育つのは「知識」</span>
+        <dl><dt>泳ぐことでいうと</dt><dd>人の体は、水に浮くと知る。</dd>
+        <dt>心でいうと</dt><dd>「思考が気分をつくる」「考え方には癖がある」と知る。</dd></dl></div>
+      <div class="ty-card reveal"><span class="n">2</span><h3>技術</h3><span class="grow">育つのは「思考」</span>
+        <dl><dt>泳ぐことでいうと</dt><dd>息つぎや、手足の動かし方を練習する。</dd>
+        <dt>心でいうと</dt><dd>受け取り方を切りかえる。五感から入るものを選ぶ。ゆっくり整理する。</dd></dl></div>
+      <div class="ty-card reveal"><span class="n">3</span><h3>経験</h3><span class="grow">育つのは「記憶」</span>
+        <dl><dt>泳ぐことでいうと</dt><dd>実際に水に入り、「浮けた」と体で覚える。</dd>
+        <dt>心でいうと</dt><dd>「前もつらかったけれど、乗りこえられた」という記憶が、次の判断を支える。</dd></dl></div>
+    </div>
+
+    <div class="ty-box reveal">
+      <h3>経験だけでは、心はかえって弱くなることもあります。</h3>
+      <p style="margin:0">学習と技術がないまま、つらい経験だけをすると、記憶に残るのは「こわかった」だけ。次に似たことが起きたとき、心は縮こまってしまいます。学習と技術は、経験を「傷」ではなく「力」として残すためのものです。</p>
+      <table class="ty-tbl">
+        <tr><th>学習だけ</th><td>知っているのに、できない</td></tr>
+        <tr><th>技術だけ</th><td>やり方は知っていても、理由がわからず続かない</td></tr>
+        <tr><th>経験だけ</th><td>つらい記憶がたまり、こわがりになる</td></tr>
+        <tr class="ok"><th>3つそろう</th><td>経験が力に変わり、また次の学びが始まる</td></tr>
+      </table>
+    </div>
+
+    <div class="ty-two">
+      <div class="ty-box reveal"><h3>強い心は、硬い心ではありません。</h3>
+        <p style="margin:0">傷つきたくなくて殻を硬くすると、受け入れられないことが来たときに折れてしまいます。教室で言う強さは、しなやかさ。曲がっても、また元に戻れる心です。</p></div>
+      <div class="ty-box reveal"><h3>この3つは、教室の原点です。</h3>
+        <p style="margin:0">教室の水口も、7年半、うつのトンネルの中にいました。抜け出すきっかけは、思考が気分をつくると知り（学習）、感謝で受け取り方を切りかえ続けた（技術）こと。そのトンネルの記憶（経験）が、今のこの教室の土台です。</p></div>
+    </div>
+
+    <p class="ty-quote reveal">つらかった経験は、<br><em>学習と技術</em>を足すと、力に変わります。</p>
+  </div>
+</section>
+<!-- TSUYOKU:END -->
 <section id="switch">
   <div class="wrap">
     <span class="eyebrow reveal">やってみましょう</span>
