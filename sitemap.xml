@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mizumaki-aikokoro.github.io/kokoro-chara.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://mizumaki-aikokoro.github.io/soudan-jigyosho-list.html</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
