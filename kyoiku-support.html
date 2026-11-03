@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>教育機関の外部相談窓口｜学習塾・習い事教室・スポーツクラブの第三者サポート（福岡県）｜みずまき第三者サポートセンター</title>
-<meta name="description" content="学習塾・習い事教室・スポーツクラブ・フリースクールなど、子どもに関わる教育機関向けの第三者サポート。生徒・保護者の外部相談窓口、講師・職員のハラスメント外部相談窓口、苦情対応の流れづくり、研修をお引き受けします。">
+<meta name="description" content="学習塾・習い事教室・スポーツクラブ・フリースクールなど、子どもに関わる教育機関向けの第三者サポート。生徒・保護者・講師の苦情相談対応窓口（ハラスメントの相談を含む・月額5,000円）、外部の目で点検する外部評価、苦情対応の流れづくりをお引き受けします。">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://mizumaki-aikokoro.github.io/kyoiku-support.html">
 <meta property="og:type" content="website">
@@ -29,7 +29,7 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "みずまき第三者サポートセンター（教育機関向け）",
-  "serviceType": "学習塾・習い事教室などの外部相談窓口・苦情対応の流れづくり・研修",
+  "serviceType": "学習塾・習い事教室などの苦情相談対応窓口・外部評価・苦情対応の流れづくり",
   "areaServed": "福岡県",
   "provider": {
     "@type": "Organization",
@@ -66,8 +66,18 @@
     },
     {
       "@type": "Question",
+      "name": "ハラスメントの相談も受けますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "受けます。苦情相談対応窓口で、生徒さん・保護者の方の苦情や相談とあわせて、講師・スタッフの方からのハラスメントの相談もお受けします。"}
+    },
+    {
+      "@type": "Question",
+      "name": "外部評価は、国や県の認証・認定ですか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "いいえ。当センターが外部の目で点検し、よい点と改善のご提案をお伝えするものです。国や県の認証・認定、法令に適合していることの証明ではありません。"}
+    },
+    {
+      "@type": "Question",
       "name": "料金はいくらですか？",
-      "acceptedAnswer": {"@type": "Answer", "text": "生徒数・教室数・受付の方法によって変わるため、お打ち合わせのうえでお見積りします。お打ち合わせはオンラインでもお受けします。"}
+      "acceptedAnswer": {"@type": "Answer", "text": "苦情相談対応窓口は月額5,000円（税込）です。外部評価と苦情対応の流れづくりは、教室数や生徒数を伺ったうえでお見積りします。お打ち合わせはオンラインでもお受けします。"}
     }
   ]
 }
@@ -89,6 +99,10 @@
   .ds-card h3 { margin: 0 0 8px; color: var(--green-dark); font-size: 1.02rem; }
   .ds-card p { margin: 0 0 10px; font-size: 0.88rem; color: var(--text-sub); line-height: 1.75; }
   .ds-card .price { font-weight: bold; color: #c2574c; font-size: 0.92rem; margin: 0; }
+  table.ds-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; background: #fff; }
+  table.ds-table th, table.ds-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #e6ede4; vertical-align: top; }
+  table.ds-table thead th { background: var(--green-light); color: var(--green-dark); }
+  table.ds-table td.p { white-space: nowrap; font-weight: bold; color: #c2574c; }
   .ds-note { font-size: 0.82rem; color: var(--text-sub); line-height: 1.8; margin: 12px 0 0; }
   .ds-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
   .ds-box { background: #FFF7E6; border: 1px solid #F0D9A0; border-radius: 10px; padding: 16px 20px; font-size: 0.88rem; line-height: 1.8; }
@@ -141,6 +155,7 @@
         <li><a href="daisansha-support.html">福祉事業所の皆さまへ</a></li>
         <li><a href="#service">できること</a></li>
         <li><a href="#soudan">相談の流れ</a></li>
+        <li><a href="#hyouka">外部評価</a></li>
         <li><a href="#price">料金</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
       </ul>
@@ -172,10 +187,10 @@
   <ul class="ds-worries">
     <li>生徒さんや保護者が、講師や代表に直接言いにくいことがあるかもしれない</li>
     <li>苦情が来たときの受け方と、つなぎ方を決めておきたい</li>
-    <li>講師・スタッフが安心して相談できる、外の窓口を用意したい</li>
+    <li>講師・スタッフがハラスメントを相談できる、外の窓口を用意したい</li>
     <li>「相談できる場所があります」と、保護者に示したい</li>
     <li>こども性暴力防止法の施行に向けて、相談の体制を見直したい</li>
-    <li>小さな教室なので、窓口の担当者を中で置くのが難しい</li>
+    <li>自分たちの教室の運営を、外の目で見てもらいたい</li>
   </ul>
 
   <h2 class="ds-title">対象となる教育機関</h2>
@@ -187,17 +202,16 @@
   <h2 class="ds-title" id="service">できること</h2>
   <p class="ds-sub">塾や教室の外にいる中立の第三者として、お引き受けします</p>
   <div class="ds-cards">
-    <div class="ds-card"><h3>生徒・保護者の外部相談窓口</h3><p>生徒さん・保護者の方からの相談を、電話とメールで受けます。名前を伏せた相談も受けます。気持ちと状況を整理し、ご本人の希望に沿って、塾や教室へのお伝えや専門機関のご案内につなげます。</p><p class="price">お見積り</p></div>
-    <div class="ds-card"><h3>講師・スタッフのハラスメント外部相談窓口</h3><p>講師やスタッフが、職場の外で相談できる窓口です。相談者の同意なく、名前や内容をお伝えすることはありません。月ごとに件数をご報告します。</p><p class="price">月額 5,000円〜</p></div>
+    <div class="ds-card"><h3>苦情相談対応窓口</h3><p>生徒さん・保護者の方の苦情や相談、講師・スタッフの方の<b>ハラスメントの相談</b>を、ひとつの窓口で受けます。電話とメールで、名前を伏せた相談も受けます。相談者の同意なく、名前や内容をお伝えすることはありません。月ごとに件数をご報告します。</p><p class="price">月額 5,000円</p></div>
+    <div class="ds-card"><h3>外部評価</h3><p>当センターが外部の目で、相談や苦情の受け方、教室の安全、個人情報の扱いなどを点検します。生徒さん・保護者の方・講師の方への匿名アンケートと訪問をもとに、よい点と改善のご提案を報告書にまとめます。</p><p class="price">お見積り（年1回から）</p></div>
     <div class="ds-card"><h3>苦情対応の流れづくり</h3><p>相談や苦情を受けたときの流れ図、生徒さん・保護者向けの窓口のご案内（掲示物・配布物）づくりをお手伝いします。</p><p class="price">お見積り</p></div>
-    <div class="ds-card"><h3>講師・スタッフ向けの研修</h3><p>ハラスメントの防止、子どもや保護者の話の聴き方、相談を受けたときの対応などを、約1時間でお話しします。</p><p class="price">1回 20,000円〜</p></div>
   </div>
   <p class="ds-note">※ 表示はすべて税込です。交通費は、水巻町の事務所からの実費をいただきます。お打ち合わせはオンライン（Google Meet など）でもお受けします。</p>
 
   <h2 class="ds-title" id="soudan">相談の流れ（例）</h2>
   <p class="ds-sub">窓口は話を聴いてつなぐ役割です。事実の確認と対応の判断は、塾や教室が行います</p>
   <div class="kf">
-    <div class="n start"><b>生徒さん・保護者の方から相談</b>電話・メール（名前を伏せた相談も受けます）</div>
+    <div class="n start"><b>生徒さん・保護者の方・講師の方から相談</b>電話・メール（名前を伏せた相談も受けます）</div>
     <div class="down">▼</div>
     <div class="n proc"><b>聴く・整理する</b>いつ、どこで、何があったか。どうしてほしいか</div>
     <div class="down">▼</div>
@@ -214,8 +228,47 @@
   </div>
   <p class="ds-note" style="text-align:center">※ 命や身体に危険があるときの110番・119番などは、塾や教室で対応していただくことを前提としています。<br>流れは、ご契約の際に塾や教室ごとに取り決めます。</p>
 
+  <h2 class="ds-title" id="hyouka">外部評価</h2>
+  <p class="ds-sub">外の目で点検し、よい点と改善のご提案をお伝えします（年1回から）</p>
+  <ol class="ds-flow">
+    <li><b>事前のお打ち合わせ</b><br>点検の範囲と日程を決めます</li>
+    <li><b>匿名アンケート</b><br>生徒さん・保護者の方・講師の方に、教室の外でお答えいただきます</li>
+    <li><b>訪問・見学</b><br>教室の環境、掲示物、授業前後の様子を拝見します</li>
+    <li><b>聞き取り・書類の確認</b><br>代表者・講師の方に伺い、苦情の記録や連絡体制を確認します</li>
+    <li><b>報告書</b><br>よい点と改善のご提案をまとめ、ご説明します</li>
+  </ol>
+  <div class="ds-two" style="margin-top:16px">
+    <div class="ds-box">
+      <h3>点検する主な項目</h3>
+      <ul>
+        <li>相談や苦情の受け方と記録、窓口の周知</li>
+        <li>講師と生徒さんの関わり方のルール（個別指導・私的な連絡など）</li>
+        <li>教室の安全（死角、送迎、緊急時の連絡体制）</li>
+        <li>生徒さん・保護者の方の個人情報の扱い</li>
+        <li>保護者の方への説明（料金・退塾・振替など）</li>
+      </ul>
+    </div>
+    <div class="ds-box">
+      <h3>外部評価についてのご注意</h3>
+      <ul>
+        <li>国や県の認証・認定ではありません。法令に適合していることの証明でもありません</li>
+        <li>こども性暴力防止法の認定の要件を満たすものではありません</li>
+        <li>報告書の公表は、塾や教室のご判断です。公表用の要約もお作りできます</li>
+      </ul>
+    </div>
+  </div>
+
   <h2 class="ds-title" id="price">料金</h2>
-  <p class="ds-sub">生徒数・教室数・受付の方法をお伺いして、お見積りします</p>
+  <p class="ds-sub">表示は税込です</p>
+  <table class="ds-table">
+    <thead><tr><th>サービス</th><th>内容</th><th>料金</th></tr></thead>
+    <tbody>
+      <tr><td>苦情相談対応窓口</td><td>生徒・保護者の苦情や相談、講師・スタッフのハラスメントの相談の受付（電話・メール）、月ごとの件数報告</td><td class="p">月額 5,000円</td></tr>
+      <tr><td>外部評価</td><td>匿名アンケート、訪問・見学、聞き取り、報告書</td><td class="p">お見積り</td></tr>
+      <tr><td>苦情対応の流れづくり</td><td>流れ図、窓口のご案内（掲示物・配布物）</td><td class="p">お見積り</td></tr>
+    </tbody>
+  </table>
+  <p class="ds-note">※ 交通費は、水巻町の事務所からの実費をいただきます。外部評価は、教室数・生徒数・アンケートの規模を伺ってお見積りします。</p>
   <div class="ds-two">
     <div class="ds-box">
       <h3>お打ち合わせで伺うこと</h3>
@@ -264,13 +317,13 @@
     <li><b>お打ち合わせ</b><br>オンラインでも。ご希望を伺います</li>
     <li><b>お見積り</b><br>料金と運用の案をお出しします</li>
     <li><b>ご契約</b><br>報告の範囲などを取り決めます</li>
-    <li><b>開始</b><br>生徒さん・保護者の方へ周知し、始めます</li>
+    <li><b>開始</b><br>窓口の周知、または外部評価を始めます</li>
   </ol>
 
   <h2 class="ds-title">担当者</h2>
   <div class="ds-staff">
     <b style="color:var(--green-dark)">水口 徳明</b>（相談支援専門員・精神科看護師）<br>
-    相談支援と精神科看護の現場で、ご本人やご家族の話を聴き、必要な窓口につないできました。その経験をいかして、生徒さん・保護者の方・講師の方の声を受けとめます。
+    相談支援と精神科看護の現場で、ご本人やご家族の話を聴き、必要な窓口につないできました。その経験をいかして、生徒さん・保護者の方・講師の方の声を受けとめ、外の目で教室の運営を点検します。
   </div>
 
   <h2 class="ds-title" id="faq">よくあるご質問</h2>
@@ -279,7 +332,9 @@
     <details><summary>代表者についての相談があったら、どうなりますか？</summary><p>代表者には伝えずに、弁護士や公的機関などをご案内します。この扱いは、ご契約の際に取り決めます。</p></details>
     <details><summary>中学生以下の生徒さんからの相談も受けますか？</summary><p>お受けします。ご本人の気持ちを大切にしつつ、保護者の方にお伝えする場合の基準を、ご契約の際に取り決めます。</p></details>
     <details><summary>こども性暴力防止法の認定は、この窓口だけで受けられますか？</summary><p>当センターの窓口だけで、国の認定の要件を満たすものではありません。認定をお考えの場合は、こども家庭庁の案内をご確認ください。相談の体制づくりの一部として、お手伝いできることがあります。</p></details>
-    <details><summary>料金はいくらですか？</summary><p>生徒数・教室数・受付の方法によって変わるため、お打ち合わせのうえでお見積りします。お打ち合わせはオンラインでもお受けします。</p></details>
+    <details><summary>ハラスメントの相談も受けますか？</summary><p>受けます。苦情相談対応窓口で、生徒さん・保護者の方の苦情や相談とあわせて、講師・スタッフの方からのハラスメントの相談もお受けします。</p></details>
+    <details><summary>外部評価は、国や県の認証・認定ですか？</summary><p>いいえ。当センターが外部の目で点検し、よい点と改善のご提案をお伝えするものです。国や県の認証・認定、法令に適合していることの証明ではありません。</p></details>
+    <details><summary>料金はいくらですか？</summary><p>苦情相談対応窓口は月額5,000円（税込）です。外部評価と苦情対応の流れづくりは、教室数や生徒数を伺ったうえでお見積りします。お打ち合わせはオンラインでもお受けします。</p></details>
   </div>
 
   <div class="back-contact" id="contact">
