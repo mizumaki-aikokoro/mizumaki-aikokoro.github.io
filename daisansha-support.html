@@ -88,39 +88,39 @@
 </script>
 <link rel="stylesheet" href="styles.css">
 <style>
-  .ds-badge { display: inline-block; background: var(--green-dark); color: #fff; font-size: 0.8rem; font-weight: bold; border-radius: 20px; padding: 3px 14px; margin-bottom: 10px; }
+  .ds-badge { display: inline-block; background: linear-gradient(135deg, var(--salmon) 0%, var(--salmon-dark) 100%); color: #fff; font-size: 0.8rem; font-weight: bold; border-radius: 20px; padding: 3px 14px; margin-bottom: 10px; }
   .ds-catch { font-size: 1.05rem; font-weight: bold; color: var(--text); line-height: 1.8; margin: 8px 0 0; }
   .ds-catch em { font-style: normal; color: #c2574c; }
-  h2.ds-title { font-size: 1.3rem; color: var(--green-dark); text-align: center; margin: 54px 0 8px; }
+  h2.ds-title { font-size: 1.3rem; color: var(--brown); text-align: center; margin: 54px 0 8px; }
   p.ds-sub { text-align: center; color: var(--text-sub); margin: 0 0 24px; font-size: 0.88rem; }
   .ds-worries { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; }
-  .ds-worries li { background: #fff; border: 1px solid #e6ede4; border-radius: 8px; padding: 12px 16px; font-size: 0.9rem; }
+  .ds-worries li { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; font-size: 0.9rem; }
   .ds-worries li::before { content: "☐ "; color: var(--green-dark); font-weight: bold; }
   .ds-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-  .ds-card { background: #fff; border: 1px solid #e6ede4; border-top: 5px solid var(--green-mid); border-radius: 10px; padding: 18px 20px; }
-  .ds-card h3 { margin: 0 0 8px; color: var(--green-dark); font-size: 1.02rem; }
+  .ds-card { background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--salmon); border-radius: 16px; padding: 18px 20px; }
+  .ds-card h3 { margin: 0 0 8px; color: var(--brown); font-size: 1.02rem; }
   .ds-card p { margin: 0 0 10px; font-size: 0.88rem; color: var(--text-sub); line-height: 1.75; }
   .ds-card .price { font-weight: bold; color: #c2574c; font-size: 0.92rem; margin: 0; }
   table.ds-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; background: #fff; }
-  table.ds-table th, table.ds-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #e6ede4; vertical-align: top; }
+  table.ds-table th, table.ds-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
   table.ds-table thead th { background: var(--green-light); color: var(--green-dark); }
   table.ds-table td.p { white-space: nowrap; font-weight: bold; color: #c2574c; }
   .ds-note { font-size: 0.82rem; color: var(--text-sub); line-height: 1.8; margin: 12px 0 0; }
   .ds-why { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-  .ds-why div { background: var(--green-light); border-radius: 10px; padding: 16px 18px; font-size: 0.88rem; line-height: 1.75; }
-  .ds-why b { display: block; color: var(--green-dark); font-size: 0.98rem; margin-bottom: 4px; }
+  .ds-why div { background: var(--green-light); border-radius: 16px; padding: 16px 18px; font-size: 0.88rem; line-height: 1.75; }
+  .ds-why b { display: block; color: var(--brown); font-size: 0.98rem; margin-bottom: 4px; }
   .ds-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-  .ds-box { background: #FFF7E6; border: 1px solid #F0D9A0; border-radius: 10px; padding: 16px 20px; font-size: 0.88rem; line-height: 1.8; }
+  .ds-box { background: #FFF7E6; border: 1px solid #F0D9A0; border-radius: 16px; padding: 16px 20px; font-size: 0.88rem; line-height: 1.8; }
   .ds-box h3 { margin: 0 0 6px; font-size: 0.98rem; color: #8a5a10; }
   .ds-box ul { margin: 0; padding-left: 1.2em; }
   .ds-flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; counter-reset: f; }
-  .ds-flow li { background: #fff; border: 1px solid #e6ede4; border-radius: 10px; padding: 14px; font-size: 0.86rem; line-height: 1.7; counter-increment: f; }
-  .ds-flow li::before { content: counter(f); display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--green-dark); color: #fff; font-weight: bold; margin-right: 6px; }
+  .ds-flow li { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 14px; font-size: 0.86rem; line-height: 1.7; counter-increment: f; }
+  .ds-flow li::before { content: counter(f); display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--salmon); color: #fff; font-weight: bold; margin-right: 6px; }
   .ds-flow b { color: var(--green-dark); }
-  .ds-staff { background: #fff; border: 1px solid #e6ede4; border-radius: 10px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; }
+  .ds-staff { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; }
   .ds-pdf { text-align: center; margin: 20px 0 0; }
-  .ds-faq details { background: #fff; border: 1px solid #e6ede4; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; font-size: 0.9rem; }
-  .ds-faq summary { font-weight: bold; color: var(--green-dark); cursor: pointer; }
+  .ds-faq details { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; margin-bottom: 10px; font-size: 0.9rem; }
+  .ds-faq summary { font-weight: bold; color: var(--brown); cursor: pointer; }
   .ds-faq p { margin: 8px 0 0; line-height: 1.8; }
 </style>
 </head>

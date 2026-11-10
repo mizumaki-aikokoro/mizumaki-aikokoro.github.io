@@ -26,22 +26,22 @@
 </script>
 <link rel="stylesheet" href="styles.css">
 <style>
-  .ds-badge { display: inline-block; background: var(--green-dark); color: #fff; font-size: 0.8rem; font-weight: bold; border-radius: 20px; padding: 3px 14px; margin-bottom: 10px; }
+  .ds-badge { display: inline-block; background: linear-gradient(135deg, var(--salmon) 0%, var(--salmon-dark) 100%); color: #fff; font-size: 0.8rem; font-weight: bold; border-radius: 20px; padding: 3px 14px; margin-bottom: 10px; }
   .ds-catch { font-size: 1.05rem; font-weight: bold; color: var(--text); line-height: 1.8; margin: 8px 0 0; }
   .ds-catch em { font-style: normal; color: #c2574c; }
-  h2.ds-title { font-size: 1.3rem; color: var(--green-dark); text-align: center; margin: 50px 0 8px; }
+  h2.ds-title { font-size: 1.3rem; color: var(--brown); text-align: center; margin: 50px 0 8px; }
   p.ds-sub { text-align: center; color: var(--text-sub); margin: 0 0 22px; font-size: 0.9rem; }
   .now { background: #FFF4F1; border: 2px solid #E89A93; border-radius: 12px; padding: 14px 20px; margin: 26px 0 0; font-size: 0.92rem; line-height: 1.8; }
   .now b.h { display: block; color: #B5463B; font-size: 1.02rem; margin-bottom: 4px; }
   .now a { font-weight: bold; }
   .ex { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
-  .ex li { background: #fff; border: 1px solid #e6ede4; border-radius: 8px; padding: 12px 16px; font-size: 0.92rem; }
+  .ex li { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; font-size: 0.92rem; }
   .ex li::before { content: "💬 "; }
   /* 相談の流れ */
   .kf { max-width: 640px; margin: 0 auto; font-size: 0.92rem; line-height: 1.75; }
   .kf .n { border-radius: 12px; padding: 12px 16px; text-align: center; }
   .kf .n b { display: block; font-size: 1rem; margin-bottom: 2px; }
-  .kf .step { display: inline-block; background: var(--green-dark); color: #fff; border-radius: 20px; font-size: 0.75rem; padding: 0 10px; margin-bottom: 4px; }
+  .kf .step { display: inline-block; background: var(--salmon); color: #fff; border-radius: 20px; font-size: 0.75rem; padding: 0 10px; margin-bottom: 4px; }
   .kf .start { background: #eee; }
   .kf .proc { background: var(--green-light); border: 1.5px solid var(--green-mid); }
   .kf .q { background: #FFFBE0; border: 1.5px solid #D9BF45; }
@@ -51,18 +51,18 @@
   .kf .three .n b { text-align: center; }
   .kf .end { background: #fff; border: 1.5px dashed var(--green-mid); }
   .ds-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-  .ds-box { background: #FFF7E6; border: 1px solid #F0D9A0; border-radius: 10px; padding: 16px 20px; font-size: 0.9rem; line-height: 1.8; }
+  .ds-box { background: #FFF7E6; border: 1px solid #F0D9A0; border-radius: 16px; padding: 16px 20px; font-size: 0.9rem; line-height: 1.8; }
   .ds-box h3 { margin: 0 0 6px; font-size: 1rem; color: #8a5a10; }
   .ds-box ul { margin: 0; padding-left: 1.2em; }
   .ok { background: var(--green-light); border-color: #C9DBC2; }
   .ok h3 { color: var(--green-dark); }
   table.tel { width: 100%; border-collapse: collapse; background: #fff; font-size: 0.92rem; }
-  table.tel td { border-bottom: 1px solid #e6ede4; padding: 11px 10px; vertical-align: top; }
+  table.tel td { border-bottom: 1px solid var(--line); padding: 11px 10px; vertical-align: top; }
   table.tel td.no { white-space: nowrap; font-weight: bold; font-size: 1.05rem; }
   table.tel td.no a { color: #B5463B; }
-  @media (max-width: 560px) { table.tel td { display: block; border: 0; padding: 2px 10px; } table.tel tr { display: block; border-bottom: 1px solid #e6ede4; padding: 9px 0; } }
-  .ds-faq details { background: #fff; border: 1px solid #e6ede4; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; font-size: 0.92rem; }
-  .ds-faq summary { font-weight: bold; color: var(--green-dark); cursor: pointer; }
+  @media (max-width: 560px) { table.tel td { display: block; border: 0; padding: 2px 10px; } table.tel tr { display: block; border-bottom: 1px solid var(--line); padding: 9px 0; } }
+  .ds-faq details { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; margin-bottom: 10px; font-size: 0.92rem; }
+  .ds-faq summary { font-weight: bold; color: var(--brown); cursor: pointer; }
   .ds-faq p { margin: 8px 0 0; line-height: 1.8; }
   .ds-note { font-size: 0.82rem; color: var(--text-sub); line-height: 1.8; margin: 10px 0 0; }
 </style>
